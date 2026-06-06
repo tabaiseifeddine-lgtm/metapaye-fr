@@ -879,10 +879,6 @@ footer{background:var(--navy);padding:64px 5% 28px}
           <li>Support technique et hot-line dédiée</li>
         </ul>
         <div class="ec-price-tag">
-          <strong>💰 Licence à partir de 49€/mois</strong>
-          <span>+ formation optionnelle</span>
-        </div>
-        <div class="ec-price-tag" style="margin-top:.5rem">
           <strong>📄 8 à 10€ le bulletin de paie</strong>
           <span>Traitement paie via Mysilae inclus</span>
         </div>
@@ -1366,8 +1362,8 @@ footer{background:var(--navy);padding:64px 5% 28px}
       </a>
     </div>
     <div class="cta-btns">
-      <a href="#" class="btn-gold-lg">📅 Prendre RDV gratuitement</a>
-      <a href="#" class="btn-wh">📞 06 52 91 67 84</a>
+      <a href="#contact" class="btn-gold-lg">📅 Prendre RDV gratuitement</a>
+      <a href="tel:+33652916784" class="btn-wh">📞 06 52 91 67 84</a>
     </div>
   </div>
 </section>
@@ -1424,10 +1420,10 @@ footer{background:var(--navy);padding:64px 5% 28px}
       <div class="ft-col">
         <h5>Contact</h5>
         <ul>
-          <li><a href="#">Prendre RDV</a></li>
-          <li><a href="#">Demander un devis</a></li>
-          <li><a href="#">contact@metapaye.fr</a></li>
-          <li><a href="#">06 52 91 67 84</a></li>
+          <li><a href="#contact">Prendre RDV</a></li>
+          <li><a href="#contact">Demander un devis</a></li>
+          <li><a href="mailto:contact@metapaye.fr">contact@metapaye.fr</a></li>
+          <li><a href="tel:+33652916784">06 52 91 67 84</a></li>
           <li><a href="#">Blog &amp; Actualités</a></li>
           <li><a href="#">Mentions légales</a></li>
         </ul>
@@ -1491,6 +1487,38 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 }, {threshold: .1, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+// Catalogue form submit
+(function(){
+  var btn = document.querySelector('.hfc-submit');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var emailInput = document.querySelector('.hfc-input[type="email"]');
+    var email = emailInput ? emailInput.value.trim() : '';
+    if(!email || !email.includes('@')){
+      if(emailInput){ emailInput.style.border='2px solid #e74c3c'; emailInput.focus(); }
+      return;
+    }
+    var subject = encodeURIComponent('Demande de catalogue MÉTAPAYE');
+    var body = encodeURIComponent('Bonjour,\n\nJe souhaite recevoir votre catalogue formations et tarifs.\n\nMon email : ' + email);
+    window.location.href = 'mailto:contact@metapaye.fr?subject=' + subject + '&body=' + body;
+    btn.textContent = '✅ Demande envoyée !';
+    btn.style.background = '#27ae60';
+  });
+})();
+
+// Newsletter footer
+(function(){
+  var btn = document.querySelector('.ft-nl-btn');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var input = btn.previousElementSibling;
+    var email = input ? input.value.trim() : '';
+    if(!email || !email.includes('@')){ if(input) input.focus(); return; }
+    window.location.href = 'mailto:contact@metapaye.fr?subject=' + encodeURIComponent('Inscription newsletter MÉTAPAYE') + '&body=' + encodeURIComponent('Email : ' + email);
+    btn.textContent = '✅ Inscrit !';
+  });
+})();
 
 // Situation selector
 document.querySelectorAll('.sit-opt').forEach(opt => {
