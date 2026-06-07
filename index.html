@@ -1,973 +1,913 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MÉTAPAYE — Expert Paie · Formation Qualiopi · Partenaire Mysilae</title>
-<meta name="description" content="Cabinet expert en externalisation de la paie pour PME et experts-comptables. Centre de formation certifié Qualiopi. Partenaire officiel Mysilae. Formation Gestionnaire de Paie 100% CPF.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#0b1d3a;--navy2:#0f2548;--navy3:#1a3260;
-  --gold:#c9a84c;--gold2:#e8c96a;--gold3:#f5e09a;
-  --white:#ffffff;--off:#f8fafc;--off2:#f1f5f9;
-  --slate:#64748b;--slate2:#94a3b8;--text:#1e293b;
-  --green:#22c55e;--purple:#7c3aed;--teal:#0891b2;
-  --border:#e2e8f0;--border2:#cbd5e1;
-  --r:12px;--r2:20px;--r3:28px;
-  --sh:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
-  --sh2:0 8px 32px rgba(0,0,0,.12),0 24px 64px rgba(0,0,0,.08);
-  --sh3:0 20px 80px rgba(0,0,0,.2);
-}
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);overflow-x:hidden;background:#fff;-webkit-font-smoothing:antialiased}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MÉTAPAYE — Formation Paie | Mysilae | Externalisation</title>
+  <meta name="description" content="Centre de formation certifié Qualiopi. Titre Professionnel Gestionnaire de Paie, revendeur officiel Mysilae, externalisation de la paie pour TPE/PME." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1b35;
+      --navy-light: #1a2d50;
+      --gold: #e8a020;
+      --gold-hover: #c98a18;
+      --white: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-500: #64748b;
+      --gray-700: #334155;
+      --green: #16a34a;
+      --blue-cpf: #003189;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.10);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--navy); background: var(--white); }
 
-/* ══════ ANNOUNCE BAR ══════ */
-.announce{
-  background:linear-gradient(90deg,#0a1628,var(--navy2),#0a1628);
-  color:#fff;text-align:center;padding:.6rem 1rem;
-  font-size:.78rem;font-weight:600;letter-spacing:.2px;position:relative;z-index:101;
-  border-bottom:1px solid rgba(201,168,76,.2)}
-.announce strong{color:var(--gold2)}
-.announce a{color:var(--gold2);text-decoration:none}
-.announce a:hover{text-decoration:underline}
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+      padding: 8px 0;
+      text-align: center;
+    }
+    .topbar strong { color: var(--gold); }
+    .topbar a { color: var(--gold); text-decoration: underline; margin-left: 8px; }
 
-/* ══════ NAV ══════ */
-nav{
-  position:sticky;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 4%;height:66px;
-  background:rgba(255,255,255,.95);backdrop-filter:blur(20px) saturate(180%);
-  -webkit-backdrop-filter:blur(20px) saturate(180%);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 1px 0 rgba(0,0,0,.04),0 4px 20px rgba(0,0,0,.05)}
-.nav-logo{font-size:1.4rem;font-weight:800;color:var(--navy);text-decoration:none;letter-spacing:-.5px}
-.nav-logo em{color:var(--gold);font-style:normal}
-.nav-links{display:flex;gap:0;list-style:none;align-items:center}
-.nav-links a{color:var(--slate);text-decoration:none;font-size:.85rem;font-weight:500;
-  padding:.4rem .9rem;border-radius:8px;transition:all .18s;display:block}
-.nav-links a:hover{color:var(--navy);background:var(--off)}
-.nav-ctas{display:flex;gap:.6rem;align-items:center}
-.nav-tel{color:var(--navy);font-weight:700;font-size:.82rem;text-decoration:none;
-  display:flex;align-items:center;gap:.3rem;padding:.4rem .7rem;border-radius:8px;
-  border:1.5px solid var(--border2);transition:all .18s}
-.nav-tel:hover{background:var(--off);border-color:var(--navy)}
-.nav-btn{background:var(--navy);color:#fff;padding:.5rem 1.2rem;border-radius:8px;
-  font-weight:700;font-size:.82rem;text-decoration:none;transition:all .2s}
-.nav-btn:hover{background:var(--navy3);transform:translateY(-1px);box-shadow:0 4px 14px rgba(11,29,58,.3)}
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 68px;
+    }
+    .logo { font-size: 22px; font-weight: 900; color: var(--navy); text-decoration: none; letter-spacing: -0.5px; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--gray-700);
+      font-size: 14px; font-weight: 500;
+      padding: 8px 14px; border-radius: 6px;
+      transition: all .2s;
+    }
+    .nav-links a:hover { background: var(--gray-100); color: var(--navy); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .nav-right a { font-size: 13px; color: var(--gray-700); text-decoration: none; font-weight: 500; }
+    .btn-nav {
+      background: var(--navy); color: var(--white) !important;
+      padding: 9px 18px; border-radius: 7px; font-size: 13px;
+      font-weight: 600; text-decoration: none !important; transition: background .2s;
+    }
+    .btn-nav:hover { background: var(--navy-light) !important; }
+    .btn-gold {
+      background: var(--gold); color: var(--white) !important;
+      padding: 9px 18px; border-radius: 7px; font-size: 13px;
+      font-weight: 700; text-decoration: none !important; transition: background .2s;
+    }
+    .btn-gold:hover { background: var(--gold-hover) !important; }
 
-/* ══════ HERO ══════ */
-.hero{
-  min-height:96vh;
-  background:radial-gradient(ellipse 100% 80% at 70% 50%, rgba(26,50,96,.6) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 60% at 20% 80%, rgba(201,168,76,.12) 0%, transparent 60%),
-    linear-gradient(160deg,#060e1f 0%,#0b1d3a 40%,#0f2548 70%,#0d1e3d 100%);
-  display:flex;align-items:center;position:relative;overflow:hidden;padding:0 4%}
-/* Mesh grid overlay */
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);
-  background-size:60px 60px;pointer-events:none}
-/* Glow circles */
-.hero::after{
-  content:'';position:absolute;width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);
-  top:-100px;right:10%;pointer-events:none}
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3560 60%, #0d2545 100%);
+      color: var(--white); position: relative; overflow: hidden;
+      padding: 80px 24px 70px;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=80') center/cover;
+      opacity: 0.08;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: center;
+      position: relative;
+    }
+    .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white); font-size: 12px; font-weight: 600;
+      padding: 5px 12px; border-radius: 20px;
+    }
+    .badge.gold { background: var(--gold); border-color: var(--gold); }
+    .hero h1 { font-size: 46px; font-weight: 900; line-height: 1.1; margin-bottom: 18px; letter-spacing: -1px; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p { font-size: 17px; color: rgba(255,255,255,0.82); line-height: 1.6; margin-bottom: 28px; max-width: 520px; }
+    .hero-stats { display: flex; gap: 28px; margin-bottom: 32px; }
+    .hero-stat .num { font-size: 26px; font-weight: 800; color: var(--gold); }
+    .hero-stat .lbl { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 2px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-hero-main {
+      background: var(--gold); color: var(--white); font-weight: 700;
+      padding: 14px 28px; border-radius: 8px; text-decoration: none;
+      font-size: 15px; transition: all .2s; border: none; cursor: pointer;
+      display: inline-block;
+    }
+    .btn-hero-main:hover { background: var(--gold-hover); transform: translateY(-1px); }
+    .btn-hero-sec {
+      background: rgba(255,255,255,0.1); color: var(--white); font-weight: 600;
+      padding: 14px 28px; border-radius: 8px; text-decoration: none;
+      font-size: 15px; transition: all .2s; border: 1px solid rgba(255,255,255,0.3);
+      display: inline-block;
+    }
+    .btn-hero-sec:hover { background: rgba(255,255,255,0.18); }
 
-.hero-inner{
-  max-width:1320px;margin:0 auto;width:100%;
-  padding:120px 0 100px;
-  display:grid;grid-template-columns:1fr 460px;gap:70px;align-items:center;position:relative;z-index:1}
+    /* ── HERO FORM CARD ── */
+    .hero-card {
+      background: var(--white); border-radius: 14px;
+      padding: 30px; box-shadow: var(--shadow-lg);
+      color: var(--navy);
+    }
+    .hero-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .hero-card p { font-size: 13px; color: var(--gray-500); margin-bottom: 20px; }
+    .situation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .situation-btn {
+      border: 1.5px solid var(--gray-200); border-radius: 8px;
+      padding: 14px 10px; text-align: center; cursor: pointer;
+      font-size: 13px; font-weight: 500; color: var(--gray-700);
+      text-decoration: none; transition: all .2s; background: var(--white);
+      display: block;
+    }
+    .situation-btn:hover, .situation-btn.active {
+      border-color: var(--gold); color: var(--navy); background: #fffbf0;
+    }
+    .situation-btn .ico { font-size: 22px; display: block; margin-bottom: 6px; }
+    .hero-card .divider { text-align: center; color: var(--gray-500); font-size: 12px; margin: 14px 0; }
+    .hero-card input {
+      width: 100%; border: 1.5px solid var(--gray-200); border-radius: 7px;
+      padding: 11px 14px; font-size: 14px; font-family: inherit;
+      margin-bottom: 10px; transition: border-color .2s; outline: none;
+    }
+    .hero-card input:focus { border-color: var(--gold); }
+    .hero-card .btn-submit {
+      width: 100%; background: var(--gold); color: var(--white);
+      border: none; border-radius: 7px; padding: 13px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      transition: background .2s; font-family: inherit;
+    }
+    .hero-card .btn-submit:hover { background: var(--gold-hover); }
+    .hero-card .trust { font-size: 11px; color: var(--gray-500); text-align: center; margin-top: 10px; }
 
-/* Hero left */
-.h-badge{
-  display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.8rem;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-  padding:.35rem .9rem .35rem .4rem;border-radius:50px}
-.h-badge-dot{
-  width:8px;height:8px;border-radius:50%;background:var(--green);
-  box-shadow:0 0 0 3px rgba(34,197,94,.2);flex-shrink:0}
-.h-badge span{color:rgba(255,255,255,.7);font-size:.73rem;font-weight:600;letter-spacing:.3px}
-.h-badge strong{color:var(--gold2);font-size:.73rem;margin-left:.15rem}
+    /* ── STATS BAR ── */
+    .statsbar {
+      background: var(--gray-50); border-bottom: 1px solid var(--gray-200);
+      padding: 20px 24px;
+    }
+    .statsbar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 16px;
+    }
+    .stat-item { text-align: center; }
+    .stat-item .snum { font-size: 28px; font-weight: 800; color: var(--navy); }
+    .stat-item .slbl { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
 
-.hero h1{
-  font-size:clamp(2.8rem,5.5vw,4.6rem);line-height:1.04;color:#fff;
-  font-weight:800;margin-bottom:1.5rem;letter-spacing:-1.5px}
-.hero h1 .accent{
-  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 45%,#fff 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero h1 .line2{display:block}
+    /* ── SECTIONS COMMON ── */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block; background: #fff3e0; color: var(--gold);
+      font-size: 12px; font-weight: 700; padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 14px; letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .section-title { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    .section-title em { color: var(--gold); font-style: normal; }
+    .section-sub { font-size: 16px; color: var(--gray-500); max-width: 580px; line-height: 1.6; margin-bottom: 40px; }
 
-.hero-desc{color:rgba(255,255,255,.6);font-size:1.05rem;line-height:1.8;margin-bottom:2rem;max-width:500px}
-.hero-desc strong{color:rgba(255,255,255,.9);font-weight:600}
+    /* ── NAV TABS (Lefebvre Dalloz style) ── */
+    .section-tabs {
+      display: flex; gap: 0; border-bottom: 2px solid var(--gray-200);
+      margin-bottom: 40px; overflow-x: auto;
+    }
+    .tab-btn {
+      padding: 14px 24px; font-size: 14px; font-weight: 600;
+      color: var(--gray-500); cursor: pointer; border-bottom: 3px solid transparent;
+      white-space: nowrap; text-decoration: none; transition: all .2s;
+      background: none; border-top: none; border-left: none; border-right: none;
+      font-family: inherit; margin-bottom: -2px;
+    }
+    .tab-btn.active, .tab-btn:hover { color: var(--navy); border-bottom-color: var(--gold); }
 
-.hero-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.2rem}
-.hp{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
-  color:rgba(255,255,255,.7);padding:.4rem 1rem;border-radius:50px;
-  font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;text-decoration:none}
-.hp:hover,.hp.active{background:rgba(201,168,76,.18);border-color:rgba(201,168,76,.4);color:var(--gold2)}
+    /* ── FORMATION SECTION ── */
+    #formation { background: var(--white); }
+    .formations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .formation-card {
+      border: 1.5px solid var(--gray-200); border-radius: 12px;
+      overflow: hidden; transition: all .25s; background: var(--white);
+    }
+    .formation-card:hover { border-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-3px); }
+    .card-header {
+      background: var(--navy); color: var(--white);
+      padding: 18px 20px; position: relative;
+    }
+    .card-header .level-badge {
+      background: var(--gold); color: var(--white);
+      font-size: 11px; font-weight: 700; padding: 3px 10px;
+      border-radius: 20px; display: inline-block; margin-bottom: 8px;
+    }
+    .card-header h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .card-header .subtitle { font-size: 12px; color: rgba(255,255,255,0.7); }
+    .card-body { padding: 20px; }
+    .card-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .meta-tag {
+      background: var(--gray-100); color: var(--gray-700);
+      font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;
+    }
+    .meta-tag.cpf { background: #e8f0fe; color: var(--blue-cpf); }
+    .meta-tag.green { background: #dcfce7; color: var(--green); }
+    .card-body p { font-size: 13px; color: var(--gray-500); line-height: 1.5; margin-bottom: 14px; }
+    .card-features { list-style: none; margin-bottom: 18px; }
+    .card-features li {
+      font-size: 13px; color: var(--gray-700); padding: 4px 0;
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .card-features li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .card-footer { padding: 16px 20px; border-top: 1px solid var(--gray-100); display: flex; gap: 10px; }
+    .btn-card-main {
+      flex: 1; background: var(--navy); color: var(--white);
+      padding: 10px 16px; border-radius: 7px; text-decoration: none;
+      font-size: 13px; font-weight: 600; text-align: center; transition: background .2s;
+    }
+    .btn-card-main:hover { background: var(--navy-light); }
+    .btn-card-sec {
+      flex: 1; border: 1.5px solid var(--gray-200); color: var(--gray-700);
+      padding: 10px 16px; border-radius: 7px; text-decoration: none;
+      font-size: 13px; font-weight: 600; text-align: center; transition: all .2s;
+    }
+    .btn-card-sec:hover { border-color: var(--navy); color: var(--navy); }
+    .formation-cta { text-align: center; margin-top: 40px; }
 
-.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
-.btn-primary{
-  background:linear-gradient(135deg,var(--gold) 0%,#b8862a 100%);
-  color:#0b1d3a;padding:1rem 2rem;border-radius:10px;font-weight:800;font-size:.95rem;
-  text-decoration:none;transition:all .25s;
-  box-shadow:0 4px 20px rgba(201,168,76,.3),inset 0 1px 0 rgba(255,255,255,.2);
-  display:inline-flex;align-items:center;gap:.5rem}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,168,76,.45)}
-.btn-ghost{
-  background:transparent;color:rgba(255,255,255,.85);
-  padding:1rem 1.8rem;border-radius:10px;font-weight:600;font-size:.95rem;
-  text-decoration:none;border:1.5px solid rgba(255,255,255,.2);transition:all .25s;
-  display:inline-flex;align-items:center;gap:.5rem}
-.btn-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06)}
+    /* ── FINANCEMENT ── */
+    #financement { background: var(--gray-50); }
+    .financement-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .fin-card {
+      border-radius: 12px; padding: 32px 24px; text-align: center;
+      color: var(--white); position: relative; overflow: hidden;
+    }
+    .fin-card.cpf { background: var(--blue-cpf); }
+    .fin-card.ft { background: var(--white); color: var(--navy); border: 2px solid var(--gray-200); }
+    .fin-card.opco { background: #1a7a4a; }
+    .fin-card .fin-logo { font-size: 40px; margin-bottom: 12px; }
+    .fin-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .fin-card p { font-size: 14px; opacity: 0.85; line-height: 1.5; }
+    .fin-card .fin-cta {
+      margin-top: 20px; display: inline-block; padding: 10px 22px;
+      background: rgba(255,255,255,0.2); border-radius: 7px;
+      font-size: 13px; font-weight: 600; text-decoration: none; color: var(--white);
+      transition: background .2s;
+    }
+    .fin-card.ft .fin-cta { background: var(--navy); color: var(--white); }
+    .fin-card .fin-cta:hover { background: rgba(255,255,255,0.3); }
 
-.hero-trust{display:flex;align-items:center;gap:1.2rem;margin-top:2rem}
-.ht-item{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:rgba(255,255,255,.5);font-weight:500}
-.ht-sep{width:1px;height:14px;background:rgba(255,255,255,.1)}
+    /* ── MYSILAE ── */
+    #mysilae { background: var(--navy); color: var(--white); }
+    #mysilae .section-title { color: var(--white); }
+    #mysilae .section-sub { color: rgba(255,255,255,0.7); }
+    #mysilae .section-tag { background: rgba(232,160,32,0.2); color: var(--gold); }
+    .mysilae-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .mysilae-features { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .mysilae-features li {
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .mysilae-features .ico-box {
+      background: rgba(232,160,32,0.15); border-radius: 8px;
+      width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .mysilae-features h4 { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .mysilae-features p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.4; }
+    .mysilae-visual {
+      background: rgba(255,255,255,0.05); border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.1); padding: 30px;
+    }
+    .dashboard-mock {
+      background: var(--white); border-radius: 10px; padding: 20px;
+      color: var(--navy);
+    }
+    .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .dash-title { font-size: 14px; font-weight: 700; }
+    .dash-badge { background: #dcfce7; color: var(--green); font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+    .dash-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .dash-stat { background: var(--gray-50); border-radius: 7px; padding: 12px; text-align: center; }
+    .dash-stat .n { font-size: 20px; font-weight: 800; color: var(--navy); }
+    .dash-stat .l { font-size: 10px; color: var(--gray-500); }
+    .dash-row { height: 8px; background: var(--gray-100); border-radius: 4px; margin-bottom: 8px; }
+    .dash-row.fill-80 { background: linear-gradient(90deg, var(--gold) 80%, var(--gray-100) 80%); }
+    .dash-row.fill-60 { background: linear-gradient(90deg, #3b82f6 60%, var(--gray-100) 60%); }
+    .dash-row.fill-95 { background: linear-gradient(90deg, var(--green) 95%, var(--gray-100) 95%); }
+    .mysilae-ctas { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-mysilae-main {
+      background: var(--gold); color: var(--white); font-weight: 700;
+      padding: 13px 24px; border-radius: 8px; text-decoration: none;
+      font-size: 14px; transition: background .2s;
+    }
+    .btn-mysilae-main:hover { background: var(--gold-hover); }
+    .btn-mysilae-sec {
+      background: rgba(255,255,255,0.1); color: var(--white); font-weight: 600;
+      padding: 13px 24px; border-radius: 8px; text-decoration: none;
+      font-size: 14px; border: 1px solid rgba(255,255,255,0.2); transition: all .2s;
+    }
+    .btn-mysilae-sec:hover { background: rgba(255,255,255,0.18); }
 
-/* Hero right — Glassmorphism card */
-.hero-card{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:var(--r3);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  padding:2rem;box-shadow:0 24px 80px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1)}
-.hc-header{text-align:center;margin-bottom:1.6rem}
-.hc-header h3{color:#fff;font-size:1.1rem;font-weight:800;margin-bottom:.3rem}
-.hc-header p{color:rgba(255,255,255,.5);font-size:.8rem}
-.hc-tabs{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.2rem}
-.hct{
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
-  border-radius:10px;padding:.85rem .6rem;text-align:center;cursor:pointer;
-  transition:all .2s}
-.hct:hover{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.3)}
-.hct.active{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.4)}
-.hct-icon{display:block;font-size:1.4rem;margin-bottom:.25rem}
-.hct-txt{color:rgba(255,255,255,.75);font-size:.72rem;font-weight:700}
-.hc-sep{text-align:center;color:rgba(255,255,255,.25);font-size:.72rem;margin:.7rem 0;position:relative}
-.hc-sep::before,.hc-sep::after{content:'';position:absolute;top:50%;width:42%;height:1px;background:rgba(255,255,255,.08)}
-.hc-sep::before{left:0}.hc-sep::after{right:0}
-.hc-input{
-  width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.1);
-  border-radius:8px;padding:.75rem 1rem;font-size:.85rem;font-family:'Plus Jakarta Sans',sans-serif;
-  color:#fff;outline:none;transition:all .2s;margin-bottom:.6rem}
-.hc-input::placeholder{color:rgba(255,255,255,.35)}
-.hc-input:focus{border-color:rgba(201,168,76,.5);background:rgba(255,255,255,.1)}
-.hc-submit{
-  width:100%;background:linear-gradient(135deg,var(--gold) 0%,#b8862a 100%);
-  color:#0b1d3a;border:none;border-radius:8px;padding:.9rem;
-  font-weight:800;font-size:.9rem;font-family:'Plus Jakarta Sans',sans-serif;
-  cursor:pointer;transition:all .22s;box-shadow:0 4px 14px rgba(201,168,76,.3)}
-.hc-submit:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,.45)}
-.hc-trust-row{display:flex;justify-content:center;gap:.8rem;margin-top:.9rem;flex-wrap:wrap}
-.hctr{display:flex;align-items:center;gap:.3rem;font-size:.67rem;font-weight:600;color:rgba(255,255,255,.4)}
-.hctr::before{content:'✓';color:var(--green);font-size:.7rem}
+    /* ── EXTERNALISATION ── */
+    #externalisation { background: var(--white); }
+    .ext-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .ext-features { display: flex; flex-direction: column; gap: 20px; }
+    .ext-feature { display: flex; gap: 16px; align-items: flex-start; }
+    .ext-feature .ico { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+    .ext-feature h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .ext-feature p { font-size: 13px; color: var(--gray-500); line-height: 1.5; }
+    .ext-card {
+      background: var(--gray-50); border-radius: 14px; padding: 32px;
+      border: 1.5px solid var(--gray-200);
+    }
+    .ext-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .ext-card p { font-size: 14px; color: var(--gray-500); margin-bottom: 20px; line-height: 1.6; }
+    .ext-list { list-style: none; margin-bottom: 24px; }
+    .ext-list li { font-size: 14px; padding: 6px 0; display: flex; gap: 8px; }
+    .ext-list li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .btn-devis {
+      display: block; text-align: center; background: var(--navy); color: var(--white);
+      padding: 14px 24px; border-radius: 8px; text-decoration: none;
+      font-size: 15px; font-weight: 700; transition: background .2s;
+    }
+    .btn-devis:hover { background: var(--navy-light); }
+    .btn-devis-gold {
+      display: inline-block; background: var(--gold); color: var(--white);
+      padding: 13px 28px; border-radius: 8px; text-decoration: none;
+      font-size: 15px; font-weight: 700; transition: background .2s; margin-top: 12px;
+    }
+    .btn-devis-gold:hover { background: var(--gold-hover); }
 
-/* Hero bento stats (bottom of hero right) */
-.hero-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:1rem}
-.hsr-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);
-  border-radius:10px;padding:.7rem;text-align:center}
-.hsr-num{display:block;color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.3px}
-.hsr-lbl{display:block;color:rgba(255,255,255,.4);font-size:.62rem;font-weight:600;margin-top:.1rem}
+    /* ── BLOG ── */
+    #blog { background: var(--gray-50); }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .blog-card {
+      background: var(--white); border-radius: 12px; overflow: hidden;
+      border: 1.5px solid var(--gray-200); transition: all .25s;
+    }
+    .blog-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); border-color: var(--gold); }
+    .blog-img {
+      height: 170px; background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+    }
+    .blog-img.blue { background: linear-gradient(135deg, var(--navy), #1a3560); }
+    .blog-img.gold { background: linear-gradient(135deg, #8b5a0a, #c98a18); }
+    .blog-img.teal { background: linear-gradient(135deg, #0d4b4b, #1a7a7a); }
+    .blog-body { padding: 20px; }
+    .blog-tag { font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .blog-body h3 { font-size: 15px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+    .blog-body p { font-size: 13px; color: var(--gray-500); line-height: 1.5; margin-bottom: 14px; }
+    .blog-meta { font-size: 12px; color: var(--gray-500); }
+    .blog-cta { text-align: center; margin-top: 36px; }
+    .btn-blog { display: inline-block; border: 2px solid var(--navy); color: var(--navy); padding: 12px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 14px; transition: all .2s; }
+    .btn-blog:hover { background: var(--navy); color: var(--white); }
 
-@media(max-width:980px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-card{display:none}
-}
+    /* ── CONNEXION ── */
+    #connexion { background: var(--navy); color: var(--white); padding: 70px 24px; }
+    .connexion-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .conn-left h2 { font-size: 34px; font-weight: 800; margin-bottom: 14px; }
+    .conn-left h2 em { color: var(--gold); font-style: normal; }
+    .conn-left p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 28px; }
+    .conn-options { display: flex; flex-direction: column; gap: 14px; }
+    .conn-option {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px; padding: 18px 20px; text-decoration: none;
+      color: var(--white); transition: all .2s;
+    }
+    .conn-option:hover { background: rgba(255,255,255,0.12); border-color: var(--gold); }
+    .conn-option .conn-ico { font-size: 28px; flex-shrink: 0; }
+    .conn-option h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .conn-option p { font-size: 13px; color: rgba(255,255,255,0.6); margin: 0; }
+    .conn-right {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 36px;
+    }
+    .conn-right h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .conn-right p { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+    .conn-form input {
+      width: 100%; background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.15); border-radius: 7px;
+      padding: 12px 16px; font-size: 14px; color: var(--white);
+      font-family: inherit; margin-bottom: 12px; outline: none;
+      transition: border-color .2s;
+    }
+    .conn-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .conn-form input:focus { border-color: var(--gold); }
+    .conn-form .btn-login {
+      width: 100%; background: var(--gold); color: var(--white);
+      border: none; border-radius: 7px; padding: 13px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      font-family: inherit; transition: background .2s;
+    }
+    .conn-form .btn-login:hover { background: var(--gold-hover); }
+    .conn-form .forgot { text-align: center; margin-top: 10px; font-size: 13px; color: rgba(255,255,255,0.5); }
+    .conn-form .forgot a { color: var(--gold); text-decoration: none; }
 
-/* ══════ STATS BAND ══════ */
-.stats-band{background:#fff;border-bottom:1px solid var(--border);padding:0 4%}
-.stats-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat-item{
-  padding:1.8rem 1.2rem;border-right:1px solid var(--border);
-  display:flex;align-items:center;gap:1rem;transition:background .2s}
-.stat-item:last-child{border-right:none}
-.stat-item:hover{background:var(--off)}
-.stat-icon{font-size:1.9rem;flex-shrink:0}
-.stat-num{display:block;font-size:1.6rem;font-weight:800;color:var(--navy);letter-spacing:-.5px;line-height:1}
-.stat-lbl{display:block;font-size:.73rem;color:var(--slate);font-weight:500;margin-top:.2rem}
-@media(max-width:700px){.stats-inner{grid-template-columns:repeat(2,1fr)}.stat-item{border-right:none;border-bottom:1px solid var(--border)}}
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--gray-50); padding: 70px 24px; }
+    .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+    .testi-card {
+      background: var(--white); border-radius: 12px; padding: 24px;
+      border: 1.5px solid var(--gray-200);
+    }
+    .stars { color: var(--gold); font-size: 15px; margin-bottom: 12px; }
+    .testi-card blockquote { font-size: 14px; color: var(--gray-700); line-height: 1.6; font-style: italic; margin-bottom: 16px; }
+    .testi-author { display: flex; gap: 12px; align-items: center; }
+    .testi-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 16px; }
+    .testi-name { font-size: 14px; font-weight: 700; }
+    .testi-role { font-size: 12px; color: var(--gray-500); }
 
-/* ══════ SECTION BASE ══════ */
-section{padding:96px 4%}
-.s-inner{max-width:1320px;margin:0 auto}
-.s-eyebrow{
-  display:inline-flex;align-items:center;gap:.4rem;margin-bottom:.9rem;
-  background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.18);
-  color:var(--gold);padding:.3rem .85rem;border-radius:6px;
-  font-size:.7rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
-.s-title{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;line-height:1.14;
-  color:var(--navy);margin-bottom:.85rem;letter-spacing:-.5px}
-.s-title .acc{color:var(--gold)}
-.s-sub{color:var(--slate);font-size:1rem;line-height:1.78;max-width:560px}
+    /* ── FOOTER ── */
+    footer { background: var(--navy); color: rgba(255,255,255,0.75); padding: 56px 24px 28px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .logo { font-size: 20px; font-weight: 900; color: var(--white); text-decoration: none; display: block; margin-bottom: 12px; }
+    .footer-brand .logo span { color: var(--gold); }
+    .footer-brand p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+    .footer-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .footer-badge { background: rgba(255,255,255,0.08); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; color: rgba(255,255,255,0.7); }
+    .footer-col h4 { color: var(--white); font-size: 13px; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; transition: color .2s; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.4); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-links a:hover { color: var(--gold); }
 
-/* ══════ SERVICES BENTO ══════ */
-.bento-section{background:var(--navy);overflow:hidden;position:relative}
-.bento-section::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
-  background-size:48px 48px}
-.bento-hdr{text-align:center;margin-bottom:3.5rem;position:relative;z-index:1}
-.bento-hdr .s-eyebrow{background:rgba(201,168,76,.12);color:var(--gold2)}
-.bento-hdr .s-title{color:#fff}
-.bento-hdr .s-sub{color:rgba(255,255,255,.5);margin:0 auto}
+    /* ── STICKY ENTRETIEN BTN ── */
+    .sticky-btn {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+      background: var(--gold); color: var(--white);
+      padding: 14px 22px; border-radius: 50px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(232,160,32,0.4); transition: all .2s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .sticky-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(232,160,32,0.5); }
 
-.bento-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  grid-template-rows:auto auto;
-  gap:1.2rem;position:relative;z-index:1}
-
-.bento-card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:var(--r2);padding:2.2rem;
-  transition:all .3s;position:relative;overflow:hidden;cursor:pointer}
-.bento-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  transform:scaleX(0);transition:transform .4s}
-.bento-card:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
-.bento-card:hover::before{transform:scaleX(1)}
-.bento-card.featured{background:linear-gradient(160deg,rgba(201,168,76,.1) 0%,rgba(255,255,255,.04) 100%);border-color:rgba(201,168,76,.25);grid-column:span 2}
-
-.bc-tag{
-  display:inline-flex;align-items:center;gap:.3rem;
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
-  color:rgba(255,255,255,.6);padding:.22rem .65rem;border-radius:5px;
-  font-size:.66rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;margin-bottom:1rem}
-.bc-tag.gold{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.3);color:var(--gold2)}
-.bc-icon{font-size:2.2rem;display:block;margin-bottom:1rem}
-.bc-title{color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:.7rem;letter-spacing:-.2px}
-.bc-desc{color:rgba(255,255,255,.55);font-size:.87rem;line-height:1.72;margin-bottom:1.2rem}
-.bc-list{list-style:none;margin-bottom:1.4rem}
-.bc-list li{color:rgba(255,255,255,.6);font-size:.82rem;padding:.32rem 0;
-  display:flex;align-items:flex-start;gap:.5rem}
-.bc-list li::before{content:'→';color:var(--gold);flex-shrink:0;font-size:.8rem;margin-top:.05rem}
-.bc-price{display:flex;align-items:baseline;gap:.4rem;margin-bottom:.9rem}
-.bcp-amount{color:#fff;font-size:1.5rem;font-weight:800;letter-spacing:-.5px}
-.bcp-label{color:rgba(255,255,255,.45);font-size:.78rem;font-weight:500}
-.bc-cta{
-  display:inline-flex;align-items:center;gap:.35rem;
-  color:var(--gold2);font-size:.82rem;font-weight:700;text-decoration:none;
-  padding:.5rem 0;border-bottom:1.5px solid rgba(201,168,76,.3);transition:all .2s}
-.bc-cta:hover{border-color:var(--gold2);gap:.55rem}
-.bc-cta.btn{
-  background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.3);
-  border-radius:8px;padding:.7rem 1.4rem;transition:all .2s}
-.bc-cta.btn:hover{background:rgba(201,168,76,.25);border-color:var(--gold2)}
-
-@media(max-width:900px){.bento-grid{grid-template-columns:1fr 1fr}.bento-card.featured{grid-column:span 1}}
-@media(max-width:600px){.bento-grid{grid-template-columns:1fr}.bento-card.featured{grid-column:span 1}}
-
-/* ══════ FORMATION SECTION ══════ */
-.formation-section{background:var(--off)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;margin-top:3rem}
-.fc2{
-  background:#fff;border:1.5px solid var(--border);border-radius:var(--r2);
-  overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
-.fc2:hover{border-color:var(--gold);box-shadow:0 8px 32px rgba(201,168,76,.12);transform:translateY(-3px)}
-.fc2.featured{border-color:rgba(201,168,76,.4);background:linear-gradient(160deg,rgba(11,29,58,.97),rgba(26,50,96,.95));order:-1;grid-column:span 2}
-
-.fc2-header{padding:1.8rem 1.8rem 1rem}
-.fc2-badge{
-  display:inline-flex;align-items:center;gap:.35rem;
-  background:rgba(11,29,58,.07);color:var(--navy);
-  padding:.22rem .65rem;border-radius:5px;font-size:.66rem;font-weight:800;
-  letter-spacing:.4px;text-transform:uppercase;margin-bottom:1rem}
-.fc2-badge.gold{background:linear-gradient(135deg,var(--gold),#b8862a);color:var(--navy)}
-.fc2-badge.purple{background:#7c3aed;color:#fff}
-.fc2-badge.teal{background:#0891b2;color:#fff}
-.fc2.featured .fc2-badge{background:rgba(201,168,76,.2);color:var(--gold2)}
-
-.fc2-icon{font-size:2rem;display:block;margin-bottom:.8rem}
-.fc2-title{font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:.6rem;letter-spacing:-.2px;line-height:1.3}
-.fc2.featured .fc2-title{color:#fff}
-.fc2-sub{display:block;font-size:.78rem;font-weight:500;color:var(--slate);margin-bottom:.6rem}
-.fc2.featured .fc2-sub{color:rgba(255,255,255,.5)}
-.fc2-desc{font-size:.84rem;color:var(--slate);line-height:1.7}
-.fc2.featured .fc2-desc{color:rgba(255,255,255,.55)}
-
-.fc2-tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 1.8rem 1.2rem}
-.fc2t{background:var(--off);border:1px solid var(--border);color:var(--slate);
-  padding:.2rem .6rem;border-radius:5px;font-size:.68rem;font-weight:700}
-.fc2t.green{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:#16a34a}
-.fc2.featured .fc2t{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
-.fc2.featured .fc2t.green{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.25);color:#4ade80}
-
-.fc2-price{
-  margin-top:auto;padding:1.4rem 1.8rem;
-  border-top:1px solid var(--border);background:rgba(0,0,0,.02)}
-.fc2.featured .fc2-price{border-top-color:rgba(255,255,255,.08);background:rgba(0,0,0,.2)}
-.fc2-amount{display:flex;align-items:baseline;gap:.4rem;margin-bottom:.3rem}
-.fca-main{font-size:1.6rem;font-weight:800;color:var(--navy);letter-spacing:-.5px}
-.fc2.featured .fca-main{color:#fff}
-.fca-old{font-size:.85rem;color:var(--slate2);text-decoration:line-through}
-.fc2-period{display:block;font-size:.75rem;color:var(--slate);margin-bottom:.5rem}
-.fc2.featured .fc2-period{color:rgba(255,255,255,.45)}
-.fc2-fin{display:flex;align-items:center;gap:.35rem;font-size:.73rem;font-weight:600;
-  color:#16a34a;margin-bottom:.9rem}
-.fc2.featured .fc2-fin{color:#4ade80}
-.fc2-btn{
-  display:block;text-align:center;background:var(--navy);color:#fff;
-  padding:.8rem 1.2rem;border-radius:8px;font-weight:700;font-size:.84rem;
-  text-decoration:none;transition:all .2s}
-.fc2-btn:hover{background:var(--navy3);transform:translateY(-1px)}
-.fc2.featured .fc2-btn{background:linear-gradient(135deg,var(--gold),#b8862a);color:var(--navy);font-weight:800}
-.fc2.featured .fc2-btn:hover{box-shadow:0 4px 16px rgba(201,168,76,.4)}
-
-.form-sub-header{grid-column:1/-1;padding:1.2rem 1.8rem;
-  background:linear-gradient(90deg,rgba(11,29,58,.04),rgba(11,29,58,.02));
-  border:1px solid var(--border);border-radius:var(--r);
-  display:flex;align-items:center;gap:1rem}
-.fsh-icon{font-size:1.6rem;flex-shrink:0}
-.fsh-title{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:.15rem}
-.fsh-desc{font-size:.8rem;color:var(--slate)}
-
-.form-footer{text-align:center;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
-.btn-navy-lg{
-  display:inline-flex;align-items:center;gap:.5rem;
-  background:var(--navy);color:#fff;padding:1rem 2.2rem;border-radius:10px;
-  font-weight:800;font-size:.95rem;text-decoration:none;transition:all .25s;
-  box-shadow:0 4px 20px rgba(11,29,58,.2)}
-.btn-navy-lg:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(11,29,58,.25)}
-.form-footer p{color:var(--slate);font-size:.83rem;margin-top:.9rem;line-height:1.7}
-.form-footer strong{color:var(--gold)}
-
-@media(max-width:900px){.form-grid{grid-template-columns:1fr 1fr}.fc2.featured{grid-column:span 1}}
-@media(max-width:580px){.form-grid{grid-template-columns:1fr}.fc2.featured{grid-column:span 1}}
-
-/* ══════ MYSILAE ══════ */
-.mysilae-section{background:#fff}
-.ms-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:2.5rem}
-.ms-visual{
-  background:linear-gradient(160deg,var(--navy),var(--navy3));
-  border-radius:var(--r3);padding:2.5rem;position:relative;overflow:hidden;
-  box-shadow:var(--sh3)}
-.ms-visual::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at 80% 20%,rgba(201,168,76,.1) 0%,transparent 60%)}
-.ms-screen{
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
-  border-radius:var(--r2);padding:1.5rem;position:relative;z-index:1}
-.ms-screen-header{display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;
-  padding-bottom:.9rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.ms-dots{display:flex;gap:.3rem}
-.ms-dot{width:8px;height:8px;border-radius:50%}
-.ms-dot:nth-child(1){background:#ff5f57}.ms-dot:nth-child(2){background:#ffbd2e}.ms-dot:nth-child(3){background:#28c840}
-.ms-screen-title{color:rgba(255,255,255,.6);font-size:.78rem;font-weight:600}
-.ms-metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
-.ms-metric{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);
-  border-radius:10px;padding:.9rem}
-.ms-metric-num{display:block;color:#fff;font-size:1.3rem;font-weight:800;letter-spacing:-.3px}
-.ms-metric-lbl{display:block;color:rgba(255,255,255,.4);font-size:.65rem;font-weight:600;margin-top:.2rem}
-.ms-metric.accent{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.2)}
-.ms-metric.accent .ms-metric-num{color:var(--gold2)}
-.ms-badge-row{display:flex;gap:.5rem;margin-top:.9rem}
-.ms-badge{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);
-  color:#4ade80;padding:.25rem .65rem;border-radius:5px;font-size:.68rem;font-weight:700}
-
-.ms-content .s-sub{margin-bottom:1.6rem}
-.ms-features{list-style:none;margin-bottom:2rem}
-.ms-feature{display:flex;align-items:flex-start;gap:.85rem;padding:.75rem 0;border-bottom:1px solid var(--border)}
-.ms-feature:last-child{border-bottom:none}
-.ms-f-icon{width:36px;height:36px;border-radius:8px;background:rgba(11,29,58,.06);
-  display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.ms-f-text strong{display:block;font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:.15rem}
-.ms-f-text span{font-size:.8rem;color:var(--slate)}
-.ms-price-badge{
-  display:inline-flex;align-items:center;gap:.5rem;
-  background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.06));
-  border:1.5px solid rgba(201,168,76,.25);border-radius:10px;
-  padding:.7rem 1.2rem;margin-bottom:1.5rem}
-.ms-price-badge strong{font-size:1.2rem;font-weight:800;color:var(--navy)}
-.ms-price-badge span{font-size:.8rem;color:var(--slate)}
-
-@media(max-width:800px){.ms-layout{grid-template-columns:1fr;gap:2.5rem}}
-
-/* ══════ TESTIMONIALS ══════ */
-.testimonials{background:var(--off)}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.8rem}
-.testi-card{
-  background:#fff;border:1.5px solid var(--border);border-radius:var(--r2);
-  padding:1.8rem;transition:all .3s}
-.testi-card:hover{border-color:rgba(201,168,76,.35);box-shadow:0 8px 32px rgba(0,0,0,.06);transform:translateY(-2px)}
-.testi-card.featured{background:linear-gradient(160deg,var(--navy),var(--navy2));border-color:rgba(201,168,76,.3)}
-.testi-stars{display:flex;gap:.15rem;margin-bottom:.9rem}
-.testi-star{color:var(--gold);font-size:.9rem}
-.testi-card.featured .testi-star{color:var(--gold2)}
-.testi-quote{font-size:.88rem;line-height:1.75;color:var(--slate);margin-bottom:1.2rem;font-style:italic}
-.testi-card.featured .testi-quote{color:rgba(255,255,255,.65)}
-.testi-author{display:flex;align-items:center;gap:.75rem}
-.testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--off2);
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
-  border:2px solid var(--border);flex-shrink:0}
-.testi-card.featured .testi-avatar{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15)}
-.testi-name{font-size:.85rem;font-weight:700;color:var(--navy)}
-.testi-card.featured .testi-name{color:#fff}
-.testi-role{font-size:.75rem;color:var(--slate2)}
-.testi-card.featured .testi-role{color:rgba(255,255,255,.4)}
-@media(max-width:800px){.testi-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.testi-grid{grid-template-columns:1fr}}
-
-/* ══════ FAQ ══════ */
-.faq-section{background:#fff}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.8rem}
-.faq-item{
-  background:var(--off);border:1.5px solid var(--border);border-radius:var(--r2);
-  overflow:hidden;transition:all .25s}
-.faq-item:hover{border-color:rgba(201,168,76,.3);background:#fff}
-.faq-q{
-  padding:1.3rem 1.6rem;display:flex;align-items:center;justify-content:space-between;
-  cursor:pointer;gap:1rem}
-.faq-q-text{font-size:.9rem;font-weight:700;color:var(--navy);line-height:1.5}
-.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--border2);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  font-size:.85rem;color:var(--slate);transition:all .25s}
-.faq-item.open .faq-icon{background:var(--navy);color:#fff;transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
-.faq-item.open .faq-a{max-height:300px}
-.faq-a-inner{padding:0 1.6rem 1.3rem;font-size:.85rem;color:var(--slate);line-height:1.75;border-top:1px solid var(--border)}
-@media(max-width:700px){.faq-grid{grid-template-columns:1fr}}
-
-/* ══════ CONTACT ══════ */
-.contact-section{background:var(--off)}
-.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem}
-.contact-info{padding-right:2rem}
-.ci-method{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--border)}
-.ci-method:last-child{border-bottom:none}
-.ci-icon{width:40px;height:40px;border-radius:10px;background:var(--navy);
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.ci-label{font-size:.75rem;font-weight:700;color:var(--slate2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem}
-.ci-value{font-size:.9rem;font-weight:700;color:var(--navy)}
-.ci-value a{color:var(--navy);text-decoration:none}
-.ci-value a:hover{color:var(--gold)}
-
-.contact-form{background:#fff;border:1.5px solid var(--border);border-radius:var(--r3);padding:2rem}
-.cf-title{font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:.3rem}
-.cf-sub{font-size:.82rem;color:var(--slate);margin-bottom:1.5rem}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.cf-field{margin-bottom:.9rem}
-.cf-label{display:block;font-size:.75rem;font-weight:700;color:var(--navy);margin-bottom:.35rem;letter-spacing:.1px}
-.cf-input{
-  width:100%;background:var(--off);border:1.5px solid var(--border);
-  border-radius:8px;padding:.75rem 1rem;font-size:.86rem;
-  font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);outline:none;transition:all .2s}
-.cf-input:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(201,168,76,.1)}
-.cf-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right .9rem center;cursor:pointer}
-.cf-textarea{resize:vertical;min-height:90px}
-.cf-submit{
-  width:100%;background:linear-gradient(135deg,var(--navy),var(--navy2));
-  color:#fff;border:none;border-radius:8px;padding:.95rem;
-  font-weight:800;font-size:.9rem;font-family:'Plus Jakarta Sans',sans-serif;
-  cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(11,29,58,.2)}
-.cf-submit:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(11,29,58,.3)}
-.cf-legal{font-size:.72rem;color:var(--slate2);text-align:center;margin-top:.75rem}
-@media(max-width:700px){.contact-layout{grid-template-columns:1fr;gap:2rem}.cf-row{grid-template-columns:1fr}}
-
-/* ══════ FOOTER ══════ */
-footer{background:var(--navy);color:rgba(255,255,255,.6);padding:4rem 4% 2rem}
-.footer-inner{max-width:1320px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.footer-brand .logo{font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-.3px;text-decoration:none}
-.footer-brand .logo em{color:var(--gold);font-style:normal}
-.footer-brand p{font-size:.83rem;line-height:1.72;margin-top:.8rem;max-width:260px}
-.footer-brand .cert-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
-.cert-badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  padding:.3rem .75rem;border-radius:5px;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.6)}
-.footer-col h4{color:#fff;font-size:.85rem;font-weight:800;margin-bottom:1rem;letter-spacing:.2px}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:.5rem}
-.footer-col ul li a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;
-  transition:color .2s;display:block;padding:.1rem 0}
-.footer-col ul li a:hover{color:var(--gold2)}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.78rem}
-.footer-legal{display:flex;gap:1.5rem}
-.footer-legal a{color:rgba(255,255,255,.4);font-size:.75rem;text-decoration:none;transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,.7)}
-@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.footer-top{grid-template-columns:1fr}}
-
-/* ══════ UTILITIES ══════ */
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
-.fade-up.visible{opacity:1;transform:none}
-.text-center{text-align:center}
-.text-center .s-sub{margin:0 auto}
-.fin-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
-.fin-badge{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.18);
-  color:#15803d;padding:.22rem .7rem;border-radius:5px;font-size:.7rem;font-weight:700}
-@media(max-width:700px){nav .nav-links,.nav-tel{display:none}}
-</style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .hero h1 { font-size: 32px; }
+      .financement-grid { grid-template-columns: 1fr; }
+      .mysilae-inner, .ext-inner, .connexion-inner { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+      .section-title { font-size: 28px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ANNOUNCE BAR -->
-<div class="announce">
-  <strong>🎓 Session Titre Pro Gestionnaire de Paie — Septembre 2026.</strong>
-  Places limitées · <a href="#formation">Financement CPF 100% disponible →</a>
+<!-- TOP BAR -->
+<div class="topbar">
+  🎓 <strong>Session Titre Pro Gestionnaire de Paie — Septembre 2026</strong> · Financement CPF 100% disponible
+  <a href="#formation">S'inscrire →</a>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">MÉTA<em>PAYE</em></a>
-  <ul class="nav-links">
-    <li><a href="#externalisation">Externalisation</a></li>
-    <li><a href="#formation">Formation</a></li>
-    <li><a href="#mysilae">Mysilae</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-ctas">
-    <a href="tel:+33652916784" class="nav-tel">📞 06 52 91 67 84</a>
-    <a href="#contact" class="nav-btn">Entretien gratuit</a>
+  <div class="nav-inner">
+    <a href="#" class="logo">MÉTA<span>PAYE</span></a>
+    <ul class="nav-links">
+      <li><a href="#formation">Formations</a></li>
+      <li><a href="#financement">Financement</a></li>
+      <li><a href="#mysilae">Mysilae</a></li>
+      <li><a href="#externalisation">Externalisation</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#connexion">Espace formation</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+33652916784">📞 06 52 91 67 84</a>
+      <a href="#connexion" class="btn-nav">Se connecter</a>
+      <a href="#contact-form" class="btn-gold">Entretien gratuit</a>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<div class="hero">
   <div class="hero-inner">
-    <div>
-      <div class="h-badge">
-        <span class="h-badge-dot"></span>
-        <span>Certifié Qualiopi · </span><strong>Partenaire Mysilae N°1 en France</strong>
+    <div class="hero-left">
+      <div class="hero-badges">
+        <span class="badge gold">🏅 Qualiopi certifié</span>
+        <span class="badge">✓ CPF Éligible</span>
+        <span class="badge">💻 Partenaire Mysilae N°1</span>
       </div>
-      <h1>L'expert paie<br><span class="accent line2">qui fait la différence</span></h1>
-      <p class="hero-desc">
-        <strong>Externalisation, formation certifiée et logiciel Mysilae</strong> — MÉTAPAYE accompagne PME, cabinets d'expertise comptable et entreprises en reconversion depuis 15 ans.
-      </p>
-      <p class="audience-label" style="color:rgba(255,255,255,.38);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;margin-bottom:.6rem">Vous êtes :</p>
-      <div class="hero-pills">
-        <a href="#externalisation" class="hp active">🏢 PME / Dirigeant</a>
-        <a href="#externalisation" class="hp">📊 Expert-Comptable</a>
-        <a href="#formation" class="hp">🎓 En reconversion</a>
-        <a href="#mysilae" class="hp">💻 Logiciel Paie</a>
+      <h1>L'expert paie<br><em>qui fait la différence</em></h1>
+      <p>Centre de formation certifié et cabinet d'externalisation spécialisé paie. Titre Professionnel Gestionnaire de Paie, revendeur officiel Mysilae, externalisation TPE/PME.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">+200</div><div class="lbl">Entreprises</div></div>
+        <div class="hero-stat"><div class="num">97%</div><div class="lbl">Satisfaction</div></div>
+        <div class="hero-stat"><div class="num">4,9★</div><div class="lbl">Avis clients</div></div>
+        <div class="hero-stat"><div class="num">15 ans</div><div class="lbl">d'expertise</div></div>
       </div>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">🗓 Entretien gratuit →</a>
-        <a href="#formation" class="btn-ghost">Voir les formations</a>
-      </div>
-      <div class="hero-trust">
-        <span class="ht-item">✅ 15 ans d'expérience</span>
-        <span class="ht-sep"></span>
-        <span class="ht-item">✅ Qualiopi certifié</span>
-        <span class="ht-sep"></span>
-        <span class="ht-item">✅ Sans engagement</span>
+      <div class="hero-ctas">
+        <a href="#formation" class="btn-hero-main">🎓 Voir les formations</a>
+        <a href="#externalisation" class="btn-hero-sec">📋 Devis externalisation</a>
       </div>
     </div>
-
     <div class="hero-card">
-      <div class="hc-header">
-        <h3>Catalogue & devis gratuit</h3>
-        <p>Réponse sous 2h ouvrées</p>
+      <h3>Catalogue & devis gratuit</h3>
+      <p>Réponse sous 2h ouvrées · Sans engagement</p>
+      <div class="situation-grid">
+        <a href="mailto:contact@metapaye.fr?subject=Je suis PME" class="situation-btn"><span class="ico">🏢</span>PME / Dirigeant</a>
+        <a href="mailto:contact@metapaye.fr?subject=Je suis expert-comptable" class="situation-btn"><span class="ico">📊</span>Expert-Comptable</a>
+        <a href="mailto:contact@metapaye.fr?subject=Je suis en reconversion" class="situation-btn"><span class="ico">🎓</span>En reconversion</a>
+        <a href="mailto:contact@metapaye.fr?subject=Logiciel Mysilae" class="situation-btn"><span class="ico">💻</span>Logiciel Paie</a>
       </div>
-      <div class="hc-tabs">
-        <div class="hct active">
-          <span class="hct-icon">🏢</span>
-          <span class="hct-txt">PME</span>
-        </div>
-        <div class="hct">
-          <span class="hct-icon">📊</span>
-          <span class="hct-txt">Expert-Comptable</span>
-        </div>
-        <div class="hct">
-          <span class="hct-icon">🎓</span>
-          <span class="hct-txt">Reconversion</span>
-        </div>
-        <div class="hct">
-          <span class="hct-icon">💻</span>
-          <span class="hct-txt">Logiciel Paie</span>
-        </div>
-      </div>
-      <div class="hc-sep">ou entrez vos coordonnées</div>
-      <input type="email" class="hc-input" placeholder="Votre email professionnel">
-      <input type="tel" class="hc-input" placeholder="Téléphone (optionnel)">
-      <button class="hc-submit" onclick="window.location='mailto:contact@metapaye.fr?subject=Demande catalogue gratuit'">Recevoir le catalogue →</button>
-      <div class="hc-trust-row">
-        <span class="hctr">Sans engagement</span>
-        <span class="hctr">Réponse 2h</span>
-        <span class="hctr">RGPD conforme</span>
-      </div>
-      <div class="hero-stats-row">
-        <div class="hsr-item"><span class="hsr-num">+200</span><span class="hsr-lbl">Entreprises</span></div>
-        <div class="hsr-item"><span class="hsr-num">97%</span><span class="hsr-lbl">Satisfaction</span></div>
-        <div class="hsr-item"><span class="hsr-num">4.9★</span><span class="hsr-lbl">Note clients</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS BAND -->
-<div class="stats-band">
-  <div class="stats-inner">
-    <div class="stat-item fade-up">
-      <span class="stat-icon">🏢</span>
-      <div><span class="stat-num">+200</span><span class="stat-lbl">Entreprises accompagnées</span></div>
-    </div>
-    <div class="stat-item fade-up">
-      <span class="stat-icon">🎓</span>
-      <div><span class="stat-num">97%</span><span class="stat-lbl">Satisfaction stagiaires</span></div>
-    </div>
-    <div class="stat-item fade-up">
-      <span class="stat-icon">🏅</span>
-      <div><span class="stat-num">Qualiopi</span><span class="stat-lbl">Certifié État · 79% réussite</span></div>
-    </div>
-    <div class="stat-item fade-up">
-      <span class="stat-icon">⭐</span>
-      <div><span class="stat-num">4.9/5</span><span class="stat-lbl">Note clients · 186 avis</span></div>
+      <div class="divider">— ou entrez vos coordonnées —</div>
+      <form onsubmit="event.preventDefault(); window.location='mailto:contact@metapaye.fr?subject=Demande catalogue&body='+encodeURIComponent('Email: '+this.email.value+'\nTél: '+this.tel.value)">
+        <input type="email" name="email" placeholder="Votre email professionnel" required />
+        <input type="tel" name="tel" placeholder="Téléphone (optionnel)" />
+        <button type="submit" class="btn-submit">Recevoir le catalogue →</button>
+      </form>
+      <p class="trust">✓ Sans engagement &nbsp;·&nbsp; ✓ RGPD conforme &nbsp;·&nbsp; ✓ Réponse 2h</p>
     </div>
   </div>
 </div>
 
-<!-- SERVICES BENTO -->
-<section class="bento-section" id="services">
-  <div class="s-inner">
-    <div class="bento-hdr fade-up">
-      <span class="s-eyebrow">🚀 Nos expertises</span>
-      <h2 class="s-title">Tout ce dont vous avez besoin,<br><span class="acc">en un seul partenaire</span></h2>
-      <p class="s-sub">MÉTAPAYE couvre l'intégralité de la chaîne paie : externalisation, formation certifiée et logiciel de référence.</p>
-    </div>
-    <div class="bento-grid">
+<!-- STATS BAR -->
+<div class="statsbar">
+  <div class="statsbar-inner">
+    <div class="stat-item"><div class="snum">+200</div><div class="slbl">🏢 Entreprises accompagnées</div></div>
+    <div class="stat-item"><div class="snum">97%</div><div class="slbl">🎓 Satisfaction stagiaires</div></div>
+    <div class="stat-item"><div class="snum">Qualiopi</div><div class="slbl">🏅 Certifié État · 79% réussite</div></div>
+    <div class="stat-item"><div class="snum">4,9/5</div><div class="slbl">⭐ Note clients · 186 avis</div></div>
+    <div class="stat-item"><div class="snum">100%</div><div class="slbl">💶 Financement CPF disponible</div></div>
+  </div>
+</div>
 
-      <!-- Card FEATURED : Externalisation -->
-      <div class="bento-card featured fade-up" id="externalisation">
-        <span class="bc-tag gold">⭐ Service phare</span>
-        <span class="bc-icon">📋</span>
-        <h3 class="bc-title">Externalisation de la Paie</h3>
-        <p class="bc-desc">Déléguez l'intégralité de votre paie à nos experts. Bulletins, DSN, URSSAF — tout est géré avec une garantie 0 erreur. Réduction des coûts jusqu'à <strong style="color:var(--gold2)">-40%</strong> vs un service interne.</p>
-        <ul class="bc-list">
-          <li>Bulletins, DSN et déclarations URSSAF</li>
-          <li>Interface dédiée Expert-Comptable sur Mysilae</li>
-          <li>Back-office paie sous votre marque (cabinets)</li>
-          <li>Gestion des entrées/sorties et fins de contrat</li>
-          <li>SLA contractuels — délais garantis</li>
-        </ul>
-        <div style="display:flex;gap:.8rem;flex-wrap:wrap">
-          <a href="#contact" class="bc-cta btn">📋 Devis personnalisé →</a>
-          <a href="#contact" class="bc-cta">Expert-Comptable</a>
+<!-- FORMATION SECTION -->
+<section id="formation">
+  <div class="section-inner">
+    <div class="section-tag">🎓 Centre certifié Qualiopi</div>
+    <h2 class="section-title">Nos formations <em>professionnelles</em></h2>
+    <p class="section-sub">Titres Professionnels niveaux 4 & 5 + modules courts. Finançables CPF, OPCO et France Travail.</p>
+
+    <div class="section-tabs">
+      <button class="tab-btn active" onclick="filterFormations('all', this)">Toutes les formations</button>
+      <button class="tab-btn" onclick="filterFormations('titre', this)">Titres Professionnels</button>
+      <button class="tab-btn" onclick="filterFormations('court', this)">Formations courtes</button>
+      <button class="tab-btn" onclick="filterFormations('distanciel', this)">100% Distanciel</button>
+    </div>
+
+    <div class="formations-grid">
+
+      <!-- Gestionnaire de Paie Présentiel -->
+      <div class="formation-card" data-cat="titre">
+        <div class="card-header">
+          <span class="level-badge">🏆 Titre Pro · Niveau 5 (Bac+2)</span>
+          <h3>Gestionnaire de Paie</h3>
+          <div class="subtitle">Présentiel + Classe virtuelle · 50/50</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="meta-tag cpf">✓ CPF Éligible</span>
+            <span class="meta-tag green">✓ OPCO</span>
+            <span class="meta-tag">910h · 6 mois</span>
+            <span class="meta-tag">Certifiant</span>
+          </div>
+          <p>Titre Professionnel de niveau 5 (équivalent BTS) certifié par l'État. Droit social, bulletins, DSN, charges sociales.</p>
+          <ul class="card-features">
+            <li>79% de réussite aux examens</li>
+            <li>73% d'accès à l'emploi en 6 mois</li>
+            <li>Formateurs experts terrain</li>
+            <li>Finançable à 100% CPF · OPCO · France Travail</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="mailto:contact@metapaye.fr?subject=Inscription Gestionnaire de Paie" class="btn-card-main">S'inscrire →</a>
+          <a href="mailto:contact@metapaye.fr?subject=Devis Gestionnaire de Paie" class="btn-card-sec">Devis</a>
         </div>
       </div>
 
-      <!-- Card : Formation -->
-      <div class="bento-card fade-up" id="formation-bento">
-        <span class="bc-tag">🎓 Qualiopi</span>
-        <span class="bc-icon">👩‍💼</span>
-        <h3 class="bc-title">Formation Gestionnaire de Paie</h3>
-        <p class="bc-desc">Titre Professionnel Niveau 5 (Bac+2) certifié par l'État. 100% finançable CPF.</p>
-        <ul class="bc-list">
-          <li>910h · 6 mois · Présentiel + distanciel</li>
-          <li>79% de réussite aux examens</li>
-          <li>73% d'accès à l'emploi en 6 mois</li>
-        </ul>
-        <div class="bc-price"><span class="bcp-amount">8 900€</span><span class="bcp-label">100% CPF</span></div>
-        <a href="#formation" class="bc-cta">Voir toutes les formations →</a>
+      <!-- Gestionnaire de Paie Distanciel -->
+      <div class="formation-card" data-cat="titre distanciel">
+        <div class="card-header">
+          <span class="level-badge">💻 100% Distanciel · Niveau 5</span>
+          <h3>Gestionnaire de Paie</h3>
+          <div class="subtitle">100% en ligne · Full Remote</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="meta-tag cpf">✓ CPF Éligible</span>
+            <span class="meta-tag green">✓ OPCO</span>
+            <span class="meta-tag">910h · 6 mois</span>
+            <span class="meta-tag">🏠 En ligne</span>
+          </div>
+          <p>Même Titre Professionnel niveau 5, 100% à distance. Apprenez à votre rythme depuis chez vous. Idéal pour les actifs en reconversion.</p>
+          <ul class="card-features">
+            <li>Accès plateforme 24h/24</li>
+            <li>Accompagnement personnalisé</li>
+            <li>Sessions live avec formateurs</li>
+            <li>Finançable à 100% CPF</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="mailto:contact@metapaye.fr?subject=Inscription Formation Distanciel" class="btn-card-main">S'inscrire →</a>
+          <a href="mailto:contact@metapaye.fr?subject=Devis Formation Distanciel" class="btn-card-sec">Devis</a>
+        </div>
       </div>
 
-      <!-- Card : Mysilae -->
-      <div class="bento-card fade-up" id="mysilae">
-        <span class="bc-tag">💻 Partenaire N°1</span>
-        <span class="bc-icon">🖥️</span>
-        <h3 class="bc-title">Logiciel Mysilae</h3>
-        <p class="bc-desc">Revendeur officiel Mysilae. Installation, formation et support inclus.</p>
-        <ul class="bc-list">
-          <li>DSN automatique en 1 clic</li>
-          <li>Interface cloud multi-dossiers</li>
-          <li>Support expert dédié</li>
-        </ul>
-        <div class="bc-price"><span class="bcp-amount">8€</span><span class="bcp-label">/ bulletin</span></div>
-        <a href="#mysilae-detail" class="bc-cta">Découvrir Mysilae →</a>
+      <!-- Assistant RH -->
+      <div class="formation-card" data-cat="titre">
+        <div class="card-header">
+          <span class="level-badge">👥 RH · Niveau 5 (Bac+2)</span>
+          <h3>Assistant(e) Ressources Humaines</h3>
+          <div class="subtitle">Bac+2 — Niveau 5</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="meta-tag cpf">✓ CPF Éligible</span>
+            <span class="meta-tag green">✓ OPCO</span>
+            <span class="meta-tag">840h · 6 mois</span>
+            <span class="meta-tag">Certifiant</span>
+          </div>
+          <p>Gestion RH opérationnelle, recrutement, administration du personnel et paie. Titre Professionnel niveau 5.</p>
+          <ul class="card-features">
+            <li>Recrutement & administration RH</li>
+            <li>Paie et obligations sociales</li>
+            <li>SIRH et outils digitaux RH</li>
+            <li>Finançable à 100% CPF</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="mailto:contact@metapaye.fr?subject=Inscription Assistant RH" class="btn-card-main">S'inscrire →</a>
+          <a href="mailto:contact@metapaye.fr?subject=Devis Assistant RH" class="btn-card-sec">Devis</a>
+        </div>
       </div>
 
-      <!-- Card : International -->
-      <div class="bento-card fade-up">
-        <span class="bc-tag">🌍 International</span>
-        <span class="bc-icon">✈️</span>
-        <h3 class="bc-title">Implantation France</h3>
-        <p class="bc-desc">Entreprises étrangères s'implantant en France. Immatriculation, première paie, bilingue.</p>
-        <div class="bc-price"><span class="bcp-amount">990€</span><span class="bcp-label">pack implantation</span></div>
-        <a href="#contact" class="bc-cta">Parler à un expert →</a>
+      <!-- Secrétaire Assistant -->
+      <div class="formation-card" data-cat="titre">
+        <div class="card-header">
+          <span class="level-badge">📝 Niveau 4 (Bac)</span>
+          <h3>Secrétaire Assistant(e)</h3>
+          <div class="subtitle">Niveau 4 (Bac)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="meta-tag cpf">✓ CPF Éligible</span>
+            <span class="meta-tag">630h · 5 mois</span>
+            <span class="meta-tag">Certifiant</span>
+          </div>
+          <p>Gestion administrative, accueil, communication. Passerelle idéale vers l'Assistant RH ou Gestionnaire de Paie.</p>
+          <ul class="card-features">
+            <li>Bureautique & communication pro</li>
+            <li>Gestion administrative complète</li>
+            <li>Passerelle vers Bac+2 possible</li>
+            <li>Finançable CPF · OPCO</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="mailto:contact@metapaye.fr?subject=Inscription Secretaire Assistant" class="btn-card-main">S'inscrire →</a>
+          <a href="mailto:contact@metapaye.fr?subject=Devis Secretaire Assistant" class="btn-card-sec">Devis</a>
+        </div>
       </div>
 
-      <!-- Card : Alternance -->
-      <div class="bento-card fade-up">
-        <span class="bc-tag">🎯 OPCO</span>
-        <span class="bc-icon">🤝</span>
-        <h3 class="bc-title">Alternance & Recrutement</h3>
-        <p class="bc-desc">Formez votre futur gestionnaire de paie en alternance — OPCO finance 100% pour les PME.</p>
-        <div class="bc-price"><span class="bcp-amount">0€</span><span class="bcp-label">pour l'employeur PME</span></div>
-        <a href="#contact" class="bc-cta">Monter mon dossier OPCO →</a>
+      <!-- Formation Mysilae -->
+      <div class="formation-card" data-cat="court distanciel">
+        <div class="card-header">
+          <span class="level-badge">💻 Formation courte · 2 jours</span>
+          <h3>Formation Logiciel Mysilae</h3>
+          <div class="subtitle">Distanciel · Nouveau 2026</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="meta-tag green">✓ Finançable OPCO</span>
+            <span class="meta-tag">2 jours</span>
+            <span class="meta-tag distanciel">Distanciel</span>
+          </div>
+          <p>Maîtrisez Mysilae de A à Z : interface, bulletins, DSN, reporting. Formateur partenaire officiel.</p>
+          <ul class="card-features">
+            <li>Prise en main complète</li>
+            <li>DSN automatique</li>
+            <li>Formateur partenaire officiel</li>
+            <li>OPCO · Plan compétences</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="mailto:contact@metapaye.fr?subject=Inscription Formation Mysilae" class="btn-card-main">S'inscrire →</a>
+          <a href="mailto:contact@metapaye.fr?subject=Devis Formation Mysilae" class="btn-card-sec">Devis</a>
+        </div>
       </div>
 
+      <!-- DSN 2026 -->
+      <div class="formation-card" data-cat="court">
+        <div class="card-header">
+          <span class="level-badge">📊 Formation courte · 1 jour</span>
+          <h3>Maîtriser la DSN 2026</h3>
+          <div class="subtitle">Présentiel & Distanciel</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="meta-tag green">✓ Plan compétences</span>
+            <span class="meta-tag">1 jour</span>
+          </div>
+          <p>Évolutions DSN 2026, corrections anomalies, DSN prévoyance. Exercices sur cas réels.</p>
+          <ul class="card-features">
+            <li>Évolutions réglementaires 2026</li>
+            <li>Correction d'anomalies</li>
+            <li>Exercices sur cas réels</li>
+            <li>Plan de développement compétences</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="mailto:contact@metapaye.fr?subject=Inscription Formation DSN" class="btn-card-main">S'inscrire →</a>
+          <a href="mailto:contact@metapaye.fr?subject=Devis Formation DSN" class="btn-card-sec">Devis</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="formation-cta">
+      <a href="mailto:contact@metapaye.fr?subject=Catalogue formations complet" class="btn-devis-gold">📋 Télécharger le catalogue complet →</a>
     </div>
   </div>
 </section>
 
-<!-- FORMATIONS -->
-<section class="formation-section" id="formation">
-  <div class="s-inner">
-    <div class="text-center fade-up" style="margin-bottom:.5rem">
-      <span class="s-eyebrow">🎓 Centre certifié Qualiopi</span>
-    </div>
-    <div style="text-align:center;margin-bottom:.5rem">
-      <h2 class="s-title text-center">8 formations professionnelles<br><span class="acc">avec tarifs et financements</span></h2>
-    </div>
-    <p class="s-sub text-center">Titres Professionnels niveaux 4 &amp; 5 + modules courts. Finançables CPF, OPCO et France Travail.</p>
-    <div class="fin-badges" style="justify-content:center;margin-bottom:1rem">
-      <span class="fin-badge">✓ CPF Éligible</span>
-      <span class="fin-badge">✓ OPCO</span>
-      <span class="fin-badge">✓ France Travail</span>
-      <span class="fin-badge">✓ Plan de compétences</span>
-    </div>
-
-    <div class="form-grid">
-
-      <div class="form-sub-header fade-up">
-        <span class="fsh-icon">🏆</span>
-        <div><div class="fsh-title">Titres Professionnels Certifiants — Niveau 5 (Bac+2)</div>
-        <div class="fsh-desc">Diplômes d'État délivrés par le Ministère du Travail · 6 mois · CPF, OPCO, France Travail</div></div>
+<!-- FINANCEMENT -->
+<section id="financement">
+  <div class="section-inner">
+    <div class="section-tag">💶 Financement</div>
+    <h2 class="section-title">Comment financer <em>votre formation ?</em></h2>
+    <p class="section-sub">Nos experts en financement vous accompagnent pour trouver la meilleure solution selon votre situation — jusqu'à 100% pris en charge.</p>
+    <div class="financement-grid">
+      <div class="fin-card cpf">
+        <div class="fin-logo">🏦</div>
+        <h3>CPF<br>Éligible</h3>
+        <p>Utilisez votre Compte Personnel de Formation. En fonction de votre crédit disponible — <strong>à partir de 0€</strong>.</p>
+        <a href="https://www.moncompteformation.gouv.fr" target="_blank" class="fin-cta">Mon Compte Formation →</a>
       </div>
-
-      <div class="fc2 featured fade-up">
-        <div class="fc2-header">
-          <span class="fc2-badge gold">🏆 Titre Pro Niveau 5</span>
-          <span class="fc2-icon">👩‍💼</span>
-          <div class="fc2-title">Gestionnaire de Paie</div>
-          <span class="fc2-sub">Présentiel + Classe Virtuelle · 50% / 50%</span>
-          <p class="fc2-desc">Titre Professionnel de niveau 5 (équivalent BTS) certifié par l'État. Droit social, bulletins, DSN, conventions collectives, Mysilae. Formateur expert terrain.</p>
-        </div>
-        <div class="fc2-tags">
-          <span class="fc2t green">✓ CPF Éligible</span>
-          <span class="fc2t green">✓ OPCO</span>
-          <span class="fc2t">910h · 6 mois</span>
-          <span class="fc2t">👨‍🏫 Expert terrain</span>
-          <span class="fc2t">Certifiant</span>
-        </div>
-        <div class="fc2-price">
-          <div class="fc2-amount"><span class="fca-main">8 900€</span><span class="fca-old">10 500€</span></div>
-          <span class="fc2-period">Diplôme d'État · Formation complète</span>
-          <div class="fc2-fin">✅ Finançable à 100% CPF · OPCO · France Travail</div>
-          <a href="mailto:contact@metapaye.fr?subject=Inscription%20Gestionnaire%20de%20Paie&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20formation%20Gestionnaire%20de%20Paie.%0A%0ANom%20%3A%20%0AEmail%20%3A%20%0AT%C3%A9l%20%3A%20%0AFinancement%20%3A%20" class="fc2-btn">S'inscrire / Demander un devis →</a>
-        </div>
+      <div class="fin-card ft">
+        <div class="fin-logo">🇫🇷</div>
+        <h3>France Travail<br><span style="font-size:18px">À partir de 0€</span></h3>
+        <p>Formation éligible aux aides de France Travail (ex Pôle Emploi). Financement intégral pour les demandeurs d'emploi.</p>
+        <a href="mailto:contact@metapaye.fr?subject=Financement France Travail" class="fin-cta">Vérifier mon éligibilité →</a>
       </div>
-
-      <div class="fc2 fade-up">
-        <div class="fc2-header">
-          <span class="fc2-badge">💻 100% Distanciel</span>
-          <span class="fc2-icon">🖥️</span>
-          <div class="fc2-title">Gestionnaire de Paie</div>
-          <span class="fc2-sub">100% en ligne · Full Remote</span>
-          <p class="fc2-desc">Même Titre Professionnel niveau 5, 100% à distance. Apprenez à votre rythme depuis chez vous. Idéal pour les actifs en reconversion.</p>
-        </div>
-        <div class="fc2-tags">
-          <span class="fc2t green">✓ CPF Éligible</span>
-          <span class="fc2t green">✓ OPCO</span>
-          <span class="fc2t">910h · 6 mois</span>
-          <span class="fc2t">🏠 100% en ligne</span>
-        </div>
-        <div class="fc2-price">
-          <div class="fc2-amount"><span class="fca-main">8 900€</span></div>
-          <span class="fc2-period">Diplôme d'État · Formation en ligne</span>
-          <div class="fc2-fin">✅ Finançable à 100% CPF</div>
-          <a href="mailto:contact@metapaye.fr?subject=Inscription%20Formation%20Distanciel&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20formation%20100%25%20distanciel.%0A%0ANom%20%3A%20%0AEmail%20%3A%20%0AT%C3%A9l%20%3A%20" class="fc2-btn">S'inscrire →</a>
-        </div>
+      <div class="fin-card opco">
+        <div class="fin-logo">🏢</div>
+        <h3>OPCO<br>100% PME</h3>
+        <p>Formations réalisables en alternance ou via votre OPCO. Pour les PME : <strong>100% pris en charge par l'employeur</strong>.</p>
+        <a href="mailto:contact@metapaye.fr?subject=Financement OPCO" class="fin-cta">Monter mon dossier →</a>
       </div>
-
-      <div class="fc2 fade-up">
-        <div class="fc2-header">
-          <span class="fc2-badge purple">👥 RH · Niveau 5</span>
-          <span class="fc2-icon">📋</span>
-          <div class="fc2-title">Assistant(e) Ressources Humaines</div>
-          <span class="fc2-sub">Bac+2 — Niveau 5</span>
-          <p class="fc2-desc">Gestion RH opérationnelle, recrutement, administration du personnel et paie. Titre Professionnel niveau 5.</p>
-        </div>
-        <div class="fc2-tags">
-          <span class="fc2t green">✓ CPF Éligible</span>
-          <span class="fc2t green">✓ OPCO</span>
-          <span class="fc2t">840h · 6 mois</span>
-          <span class="fc2t">Certifiant</span>
-        </div>
-        <div class="fc2-price">
-          <div class="fc2-amount"><span class="fca-main">7 900€</span></div>
-          <span class="fc2-period">Diplôme d'État · Formation complète</span>
-          <div class="fc2-fin">✅ Finançable à 100% CPF</div>
-          <a href="mailto:contact@metapaye.fr?subject=Inscription%20Assistant%20RH&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20formation%20Assistant%20RH.%0A%0ANom%20%3A%20%0AEmail%20%3A%20%0AT%C3%A9l%20%3A%20" class="fc2-btn">S'inscrire →</a>
-        </div>
-      </div>
-
-      <div class="fc2 fade-up">
-        <div class="fc2-header">
-          <span class="fc2-badge teal">📝 Niveau 4 (Bac)</span>
-          <span class="fc2-icon">🗂️</span>
-          <div class="fc2-title">Secrétaire Assistant(e)</div>
-          <span class="fc2-sub">Niveau 4 (Bac)</span>
-          <p class="fc2-desc">Gestion administrative, accueil, communication. Passerelle idéale vers l'Assistant RH ou Gestionnaire de Paie.</p>
-        </div>
-        <div class="fc2-tags">
-          <span class="fc2t green">✓ CPF Éligible</span>
-          <span class="fc2t">630h · 5 mois</span>
-          <span class="fc2t">Certifiant</span>
-        </div>
-        <div class="fc2-price">
-          <div class="fc2-amount"><span class="fca-main">5 900€</span></div>
-          <span class="fc2-period">Diplôme d'État · Niveau Bac</span>
-          <div class="fc2-fin">✅ Finançable CPF · OPCO</div>
-          <a href="mailto:contact@metapaye.fr?subject=Inscription%20Secretaire%20Assistant&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20formation%20Secr%C3%A9taire%20Assistant.%0A%0ANom%20%3A%20%0AEmail%20%3A%20%0AT%C3%A9l%20%3A%20" class="fc2-btn">S'inscrire →</a>
-        </div>
-      </div>
-
-      <div class="form-sub-header fade-up">
-        <span class="fsh-icon">📚</span>
-        <div><div class="fsh-title">Formations Continues &amp; Perfectionnement</div>
-        <div class="fsh-desc">Modules courts · Plan de développement compétences ou OPCO</div></div>
-      </div>
-
-      <div class="fc2 fade-up">
-        <div class="fc2-header">
-          <span class="fc2-badge" style="background:rgba(8,145,178,.1);color:#0891b2">💻 Nouveau 2026</span>
-          <span class="fc2-icon">🖥️</span>
-          <div class="fc2-title">Formation Logiciel Mysilae</div>
-          <p class="fc2-desc">Maîtrisez Mysilae de A à Z : interface, bulletins, DSN, reporting. Formateur partenaire officiel.</p>
-        </div>
-        <div class="fc2-tags"><span class="fc2t green">✓ Finançable</span><span class="fc2t">2 jours</span><span class="fc2t">Distanciel</span></div>
-        <div class="fc2-price">
-          <div class="fc2-amount"><span class="fca-main">890€</span></div>
-          <span class="fc2-period">2 jours intensifs</span>
-          <div class="fc2-fin">✅ OPCO · Plan compétences</div>
-          <a href="mailto:contact@metapaye.fr?subject=Inscription%20Formation%20Mysilae&body=Bonjour%2C%0A%0ANom%20%3A%20%0AT%C3%A9l%20%3A%20" class="fc2-btn">S'inscrire →</a>
-        </div>
-      </div>
-
-      <div class="fc2 fade-up">
-        <div class="fc2-header">
-          <span class="fc2-badge" style="background:rgba(201,168,76,.1);color:#92620a">📊 Mis à jour 2026</span>
-          <span class="fc2-icon">📋</span>
-          <div class="fc2-title">Maîtriser la DSN 2026</div>
-          <p class="fc2-desc">Évolutions DSN 2026, corrections anomalies, DSN prévoyance. Exercices sur cas réels.</p>
-        </div>
-        <div class="fc2-tags"><span class="fc2t green">✓ Finançable</span><span class="fc2t">1 jour</span><span class="fc2t">Présentiel & Distanciel</span></div>
-        <div class="fc2-price">
-          <div class="fc2-amount"><span class="fca-main">490€</span></div>
-          <span class="fc2-period">Journée intensive DSN</span>
-          <div class="fc2-fin">✅ Plan compétences</div>
-          <a href="mailto:contact@metapaye.fr?subject=Inscription%20Formation%20DSN&body=Bonjour%2C%0A%0ANom%20%3A%20%0AT%C3%A9l%20%3A%20" class="fc2-btn">S'inscrire →</a>
-        </div>
-      </div>
-
-      <div class="fc2 fade-up">
-        <div class="fc2-header">
-          <span class="fc2-badge" style="background:rgba(124,58,237,.1);color:#7c3aed">🌍 Spécialisation</span>
-          <span class="fc2-icon">✈️</span>
-          <div class="fc2-title">Paie Entreprises Internationales</div>
-          <p class="fc2-desc">Réglementation française, expatriés, conventions bilatérales, DSN internationale.</p>
-        </div>
-        <div class="fc2-tags"><span class="fc2t green">✓ Finançable</span><span class="fc2t">2 jours</span><span class="fc2t">12 pers. max</span></div>
-        <div class="fc2-price">
-          <div class="fc2-amount"><span class="fca-main">1 190€</span></div>
-          <span class="fc2-period">Formation spécialisée</span>
-          <div class="fc2-fin">✅ OPCO finançable</div>
-          <a href="mailto:contact@metapaye.fr?subject=Inscription%20Paie%20Internationale&body=Bonjour%2C%0A%0ANom%20%3A%20%0AT%C3%A9l%20%3A%20" class="fc2-btn">S'inscrire →</a>
-        </div>
-      </div>
-
-      <div class="fc2 fade-up">
-        <div class="fc2-header">
-          <span class="fc2-badge" style="background:rgba(220,38,38,.08);color:#dc2626">🚀 Expert</span>
-          <span class="fc2-icon">🔬</span>
-          <div class="fc2-title">Paie Avancée &amp; Perfectionnement</div>
-          <p class="fc2-desc">Cadres, épargne salariale, ruptures conventionnelles, contrôle URSSAF. Pour gestionnaires expérimentés.</p>
-        </div>
-        <div class="fc2-tags"><span class="fc2t green">✓ Finançable</span><span class="fc2t">2 jours</span><span class="fc2t">Niveau expert</span></div>
-        <div class="fc2-price">
-          <div class="fc2-amount"><span class="fca-main">790€</span></div>
-          <span class="fc2-period">Perfectionnement 2 jours</span>
-          <div class="fc2-fin">✅ Plan compétences / OPCO</div>
-          <a href="mailto:contact@metapaye.fr?subject=Inscription%20Paie%20Avancee&body=Bonjour%2C%0A%0ANom%20%3A%20%0AT%C3%A9l%20%3A%20" class="fc2-btn">S'inscrire →</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="form-footer fade-up">
-      <a href="mailto:contact@metapaye.fr?subject=Catalogue%20formations%20complet" class="btn-navy-lg">📋 Télécharger le catalogue complet + tarifs</a>
-      <p>Entretien d'orientation gratuit · Dossier CPF &amp; financement pris en charge · Prochaine session Titre Pro : <strong>septembre 2026</strong></p>
     </div>
   </div>
 </section>
 
 <!-- MYSILAE -->
-<section class="mysilae-section" id="mysilae-detail">
-  <div class="s-inner">
-    <div class="ms-layout">
-      <div class="ms-visual fade-up">
-        <div class="ms-screen">
-          <div class="ms-screen-header">
-            <div class="ms-dots"><div class="ms-dot"></div><div class="ms-dot"></div><div class="ms-dot"></div></div>
-            <span class="ms-screen-title">Tableau de bord Mysilae</span>
-          </div>
-          <div class="ms-metric-grid">
-            <div class="ms-metric"><span class="ms-metric-num">247</span><span class="ms-metric-lbl">Bulletins ce mois</span></div>
-            <div class="ms-metric accent"><span class="ms-metric-num">8€</span><span class="ms-metric-lbl">Par bulletin</span></div>
-            <div class="ms-metric"><span class="ms-metric-num">0</span><span class="ms-metric-lbl">Erreurs DSN</span></div>
-            <div class="ms-metric"><span class="ms-metric-num">✓</span><span class="ms-metric-lbl">DSN validée</span></div>
-          </div>
-          <div class="ms-badge-row">
-            <span class="ms-badge">✓ N°1 en France</span>
-            <span class="ms-badge">✓ Cloud sécurisé</span>
-          </div>
+<section id="mysilae">
+  <div class="section-inner">
+    <div class="mysilae-inner">
+      <div>
+        <div class="section-tag">💻 Partenaire Officiel N°1</div>
+        <h2 class="section-title">Mysilae — <em>Le logiciel paie</em> qu'il vous faut</h2>
+        <p class="section-sub">Revendeur et partenaire officiel Mysilae. Nous déployons la solution, formons vos équipes et assurons le support.</p>
+        <ul class="mysilae-features">
+          <li>
+            <div class="ico-box">⚡</div>
+            <div><h4>DSN automatique en 1 clic</h4><p>Toutes les déclarations sociales générées automatiquement, sans ressaisie.</p></div>
+          </li>
+          <li>
+            <div class="ico-box">☁️</div>
+            <div><h4>Interface cloud multi-dossiers</h4><p>Accès partout, hébergement français sécurisé, multi-utilisateurs.</p></div>
+          </li>
+          <li>
+            <div class="ico-box">🔄</div>
+            <div><h4>Mises à jour réglementaires auto</h4><p>SMIC, taux, barèmes — toujours à jour sans intervention manuelle.</p></div>
+          </li>
+          <li>
+            <div class="ico-box">🎓</div>
+            <div><h4>Formation utilisateurs incluse</h4><p>Formation sur site ou à distance par nos experts certifiés.</p></div>
+          </li>
+        </ul>
+        <div class="mysilae-ctas">
+          <a href="mailto:contact@metapaye.fr?subject=Demo Mysilae" class="btn-mysilae-main">📞 Demander une démo gratuite</a>
+          <a href="mailto:contact@metapaye.fr?subject=Tarif Mysilae" class="btn-mysilae-sec">Tarif sur devis →</a>
         </div>
       </div>
-      <div class="ms-content fade-up">
-        <span class="s-eyebrow">💻 Partenaire Officiel</span>
-        <h2 class="s-title">Mysilae — le logiciel<br><span class="acc">N°1 de la paie</span></h2>
-        <p class="s-sub">Revendeur et partenaire officiel Mysilae. Nous déployons la solution, formons vos équipes et assurons le support.</p>
-        <div class="ms-price-badge">
-          <div><strong>8€</strong> <span>par bulletin</span></div>
-          <div style="width:1px;height:20px;background:rgba(201,168,76,.3)"></div>
-          <div><span style="font-size:.75rem;color:var(--slate)">Installation + Formation + Support inclus</span></div>
+      <div class="mysilae-visual">
+        <div class="dashboard-mock">
+          <div class="dash-header">
+            <span class="dash-title">Tableau de bord Mysilae</span>
+            <span class="dash-badge">✓ DSN validée</span>
+          </div>
+          <div class="dash-stats">
+            <div class="dash-stat"><div class="n">247</div><div class="l">Bulletins</div></div>
+            <div class="dash-stat"><div class="n">0</div><div class="l">Erreurs DSN</div></div>
+            <div class="dash-stat"><div class="n">100%</div><div class="l">Conformité</div></div>
+          </div>
+          <div style="font-size:11px;color:#64748b;margin-bottom:6px;">Taux de conformité</div>
+          <div class="dash-row fill-95"></div>
+          <div style="font-size:11px;color:#64748b;margin-bottom:6px;">DSN envoyées</div>
+          <div class="dash-row fill-80"></div>
+          <div style="font-size:11px;color:#64748b;margin-bottom:6px;">Bulletins validés</div>
+          <div class="dash-row fill-60"></div>
         </div>
-        <ul class="ms-features">
-          <li class="ms-feature"><div class="ms-f-icon">🚀</div><div class="ms-f-text"><strong>DSN automatique en 1 clic</strong><span>Toutes les déclarations sociales générées automatiquement</span></div></li>
-          <li class="ms-feature"><div class="ms-f-icon">☁️</div><div class="ms-f-text"><strong>Interface cloud multi-dossiers</strong><span>Accès partout, hébergement français sécurisé</span></div></li>
-          <li class="ms-feature"><div class="ms-f-icon">🔄</div><div class="ms-f-text"><strong>Mises à jour réglementaires</strong><span>SMIC, taux, barèmes — toujours à jour automatiquement</span></div></li>
-          <li class="ms-feature"><div class="ms-f-icon">🎓</div><div class="ms-f-text"><strong>Formation utilisateurs incluse</strong><span>Formation sur site ou à distance par nos experts</span></div></li>
+        <p style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:14px;text-align:center;">✓ N°1 en France &nbsp;·&nbsp; ✓ Cloud sécurisé &nbsp;·&nbsp; ✓ Installation + Support inclus</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXTERNALISATION -->
+<section id="externalisation">
+  <div class="section-inner">
+    <div class="section-tag">⭐ Service phare</div>
+    <h2 class="section-title">Externalisez votre paie, <em>gagnez en sérénité</em></h2>
+    <p class="section-sub">Confiez l'intégralité de votre paie à nos experts. Bulletins conformes, DSN, URSSAF — tout est géré.</p>
+    <div class="ext-inner">
+      <div class="ext-features">
+        <div class="ext-feature">
+          <div class="ico">📄</div>
+          <div><h4>Bulletins de paie conformes</h4><p>Calculs exacts, conformes aux conventions collectives et au droit social 2026.</p></div>
+        </div>
+        <div class="ext-feature">
+          <div class="ico">📡</div>
+          <div><h4>DSN & déclarations URSSAF</h4><p>Toutes vos déclarations sociales nominatives générées et transmises à temps.</p></div>
+        </div>
+        <div class="ext-feature">
+          <div class="ico">📊</div>
+          <div><h4>Interface Expert-Comptable</h4><p>Back-office paie sous votre marque. Accès dédié pour vos clients.</p></div>
+        </div>
+        <div class="ext-feature">
+          <div class="ico">🔔</div>
+          <div><h4>Veille réglementaire incluse</h4><p>Vous êtes alertés de chaque évolution : SMIC, taux, conventions — sans effort.</p></div>
+        </div>
+        <div class="ext-feature">
+          <div class="ico">⏱️</div>
+          <div><h4>SLA contractuels — délais garantis</h4><p>Engagement contractuel sur les délais de livraison des bulletins.</p></div>
+        </div>
+      </div>
+      <div class="ext-card" id="contact-form">
+        <h3>Devis personnalisé gratuit</h3>
+        <p>Réponse sous 24h. Tarif selon votre effectif et la complexité de votre paie. En moyenne, nos clients économisent 40% vs un service interne.</p>
+        <ul class="ext-list">
+          <li>De 1 à 500 salariés</li>
+          <li>TPE, PME, Cabinets comptables</li>
+          <li>Entreprises internationales</li>
+          <li>Associations et secteur public</li>
         </ul>
-        <a href="#contact" class="btn-primary" style="display:inline-flex">📞 Demander une démo gratuite →</a>
+        <a href="mailto:contact@metapaye.fr?subject=Devis externalisation paie&body=Bonjour,%0A%0ANom:%20%0ASociété:%20%0ANombre de salariés:%20%0ATéléphone:%20%0A%0ACordialement" class="btn-devis">📋 Demander un devis gratuit →</a>
+        <p style="font-size:12px;color:#64748b;text-align:center;margin-top:12px;">📞 ou appelez le <a href="tel:+33652916784" style="color:#0d1b35;font-weight:600;">06 52 91 67 84</a></p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="s-inner">
-    <div class="text-center fade-up">
-      <span class="s-eyebrow">💬 Témoignages</span>
-      <h2 class="s-title">Ce que disent<br><span class="acc">nos clients</span></h2>
-      <p class="s-sub text-center">4.9/5 sur 186 avis · 97% de satisfaction stagiaires</p>
-    </div>
+<div class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-tag">💬 Témoignages</div>
+    <h2 class="section-title">Ce que disent <em>nos clients</em></h2>
+    <p style="color:var(--gray-500);font-size:15px;">4,9/5 sur 186 avis · 97% de satisfaction stagiaires</p>
     <div class="testi-grid">
-      <div class="testi-card featured fade-up">
-        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-        <p class="testi-quote">«&nbsp;Avant MÉTAPAYE, je passais 2 jours par mois sur les bulletins. Maintenant je me concentre sur mon business. Zéro erreur, zéro stress depuis 2 ans.&nbsp;»</p>
+      <div class="testi-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <blockquote>« Avant MÉTAPAYE, je passais 2 jours par mois sur les bulletins. Maintenant je me concentre sur mon cœur de métier. »</blockquote>
         <div class="testi-author">
           <div class="testi-avatar">👨‍💼</div>
           <div><div class="testi-name">Pierre M.</div><div class="testi-role">Gérant PME · 35 salariés</div></div>
         </div>
       </div>
-      <div class="testi-card fade-up">
-        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-        <p class="testi-quote">«&nbsp;La formation était excellente. Les formateurs connaissent vraiment la paie terrain. J'ai décroché mon Titre Pro du premier coup et trouvé un CDI en 3 semaines.&nbsp;»</p>
+      <div class="testi-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <blockquote>« La formation était excellente. Les formateurs connaissent vraiment la paie terrain. J'ai décroché un poste en 3 mois. »</blockquote>
         <div class="testi-author">
-          <div class="testi-avatar">👩</div>
+          <div class="testi-avatar">👩‍💼</div>
           <div><div class="testi-name">Leila B.</div><div class="testi-role">Gestionnaire de Paie · Promo 2025</div></div>
         </div>
       </div>
-      <div class="testi-card fade-up">
-        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-        <p class="testi-quote">«&nbsp;Mysilae m'a été conseillé par MÉTAPAYE. Installation rapide, formation claire. Je gère maintenant 80 dossiers clients seule, avec 0 erreur DSN.&nbsp;»</p>
+      <div class="testi-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <blockquote>« Mysilae m'a été conseillé par MÉTAPAYE. Installation rapide, formation claire. Je gère maintenant 80 bulletins seule. »</blockquote>
         <div class="testi-author">
           <div class="testi-avatar">👩‍💻</div>
           <div><div class="testi-name">Sophie T.</div><div class="testi-role">Cabinet comptable · Expert-Comptable</div></div>
@@ -975,122 +915,82 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:4rem 4% 2rem}
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="s-inner">
-    <div class="text-center fade-up">
-      <span class="s-eyebrow">❓ FAQ</span>
-      <h2 class="s-title">Questions fréquentes</h2>
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-inner">
+    <div class="section-tag">📰 Actualités paie</div>
+    <h2 class="section-title">Le blog <em>MÉTAPAYE</em></h2>
+    <p class="section-sub">Actualités réglementaires, conseils pratiques et ressources pour les professionnels de la paie.</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-img blue">💰</div>
+        <div class="blog-body">
+          <div class="blog-tag">Réglementation</div>
+          <h3>SMIC 2026 : ce qui change sur votre bulletin de paie</h3>
+          <p>Depuis le 1er janvier 2026, le SMIC est fixé à 12,03€/h. Ce que ça change concrètement pour vos bulletins.</p>
+          <div class="blog-meta">7 juin 2026</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img gold">🎓</div>
+        <div class="blog-body">
+          <div class="blog-tag">Formation</div>
+          <h3>Formation Gestionnaire de Paie 2026 : tout ce que vous devez savoir</h3>
+          <p>Titre Professionnel, CPF, durée, débouchés — le guide complet de la formation gestionnaire de paie.</p>
+          <div class="blog-meta">7 juin 2026</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img teal">⚠️</div>
+        <div class="blog-body">
+          <div class="blog-tag">Conformité</div>
+          <h3>5 erreurs de paie qui peuvent coûter cher à votre entreprise</h3>
+          <p>PMSS mal appliqué, RGDU incorrecte, PAS non mis à jour… Les erreurs les plus fréquentes et comment les éviter.</p>
+          <div class="blog-meta">7 juin 2026</div>
+        </div>
+      </div>
     </div>
-    <div class="faq-grid">
-      <div class="faq-item fade-up">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <span class="faq-q-text">Comment fonctionne le financement CPF pour la formation ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Le CPF (Compte Personnel de Formation) permet de financer jusqu'à 100% du coût de votre formation. Vous consultez votre solde sur moncompteformation.gouv.fr, puis nous montons votre dossier gratuitement. La formation Gestionnaire de Paie à 8 900€ est intégralement couverte dans la majorité des cas.</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <span class="faq-q-text">Quelle est la différence entre la formation présentielle et 100% distanciel ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Les deux mènent au même Titre Professionnel niveau 5 (Bac+2). La version présentielle (50%/50%) alterne cours en salle et classes virtuelles, idéale pour ceux qui ont besoin d'un cadre. La version 100% distanciel s'adapte à votre rythme depuis chez vous, idéale pour les actifs en reconversion.</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <span class="faq-q-text">Combien coûte l'externalisation de la paie ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Le tarif est établi sur devis selon votre effectif et la complexité de votre paie. En moyenne, nos clients PME réalisent une économie de 30 à 40% par rapport à un service paie interne. Nous fournissons toujours une étude personnalisée gratuite avant tout engagement.</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <span class="faq-q-text">Qu'est-ce que la certification Qualiopi ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Qualiopi est la certification nationale qualité exigée pour accueillir des stagiaires financés par CPF, OPCO ou France Travail. Elle garantit la qualité pédagogique, le suivi des stagiaires et la compétence des formateurs, vérifiés par des auditeurs indépendants. MÉTAPAYE est certifié Qualiopi.</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <span class="faq-q-text">Je suis expert-comptable — comment fonctionne votre partenariat ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Nous intervenons en back-office paie pour votre cabinet : nous traitons les bulletins de vos clients sous votre marque. Vous gardez la relation client, nous gérons l'opérationnel. Interface dédiée Expert-Comptable sur Mysilae, tarification sur devis selon votre volume.</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          <span class="faq-q-text">Mysilae est-il adapté aux petites structures ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Oui, Mysilae s'adapte de 1 à plusieurs centaines de salariés. À partir de 8€ par bulletin, c'est l'une des solutions les plus compétitives du marché. Nous assurons l'installation, le paramétrage et la formation de vos équipes inclus dans le prix partenaire.</div></div>
-      </div>
+    <div class="blog-cta">
+      <a href="https://www.metapaye.fr/actualites" class="btn-blog">Voir tous les articles →</a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="s-inner">
-    <div class="fade-up">
-      <span class="s-eyebrow">📩 Contactez-nous</span>
-      <h2 class="s-title">Parlons de <span class="acc">votre projet</span></h2>
-      <p class="s-sub">Entretien d'orientation gratuit · Réponse sous 2h ouvrées · Sans engagement</p>
-    </div>
-    <div class="contact-layout">
-      <div class="contact-info fade-up">
-        <div class="ci-method">
-          <div class="ci-icon">📞</div>
-          <div><div class="ci-label">Téléphone</div><div class="ci-value"><a href="tel:+33652916784">06 52 91 67 84</a></div></div>
-        </div>
-        <div class="ci-method">
-          <div class="ci-icon">✉️</div>
-          <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:contact@metapaye.fr">contact@metapaye.fr</a></div></div>
-        </div>
-        <div class="ci-method">
-          <div class="ci-icon">🌐</div>
-          <div><div class="ci-label">Site web</div><div class="ci-value"><a href="https://www.metapaye.fr">www.metapaye.fr</a></div></div>
-        </div>
-        <div class="ci-method">
-          <div class="ci-icon">📅</div>
-          <div><div class="ci-label">Entretien gratuit</div><div class="ci-value">RDV en ligne ou par téléphone</div></div>
-        </div>
-        <div style="margin-top:1.8rem;padding:1.4rem;background:linear-gradient(135deg,var(--navy),var(--navy3));border-radius:var(--r2);color:#fff">
-          <div style="font-size:.8rem;font-weight:700;color:var(--gold2);margin-bottom:.5rem">✅ Ce que vous obtenez</div>
-          <ul style="list-style:none;font-size:.83rem;color:rgba(255,255,255,.65);line-height:2">
-            <li>→ Analyse de votre situation actuelle</li>
-            <li>→ Devis personnalisé et transparent</li>
-            <li>→ Recommandation de financement CPF/OPCO</li>
-            <li>→ Démonstration Mysilae si souhaité</li>
-          </ul>
-        </div>
+<!-- CONNEXION ESPACE FORMATION -->
+<section id="connexion">
+  <div class="connexion-inner">
+    <div class="conn-left">
+      <div class="section-tag" style="background:rgba(232,160,32,0.15);color:var(--gold);">🎓 Espace formation</div>
+      <h2>Accédez à votre <em>espace formation</em></h2>
+      <p>Suivez votre progression, accédez à vos cours, téléchargez vos ressources et communiquez avec vos formateurs.</p>
+      <div class="conn-options">
+        <a href="https://app.metapaye.fr" class="conn-option">
+          <div class="conn-ico">🖥️</div>
+          <div><h4>Plateforme e-learning MÉTAPAYE</h4><p>Accès à vos cours, exercices et supports de formation</p></div>
+        </a>
+        <a href="https://app.metapaye.fr" class="conn-option">
+          <div class="conn-ico">📋</div>
+          <div><h4>Suivi de votre parcours</h4><p>Progression, certificats, attestations de formation</p></div>
+        </a>
+        <a href="mailto:contact@metapaye.fr?subject=Problème connexion formation" class="conn-option">
+          <div class="conn-ico">🆘</div>
+          <div><h4>Problème de connexion ?</h4><p>Contacter le support pédagogique</p></div>
+        </a>
       </div>
-
-      <div class="contact-form fade-up">
-        <div class="cf-title">Votre message</div>
-        <div class="cf-sub">Nous vous répondons sous 2h ouvrées</div>
-        <div class="cf-row">
-          <div class="cf-field"><label class="cf-label">Prénom & Nom *</label><input type="text" class="cf-input" placeholder="Marie Dupont"></div>
-          <div class="cf-field"><label class="cf-label">Téléphone</label><input type="tel" class="cf-input" placeholder="06 XX XX XX XX"></div>
-        </div>
-        <div class="cf-field"><label class="cf-label">Email *</label><input type="email" class="cf-input" placeholder="marie@entreprise.fr"></div>
-        <div class="cf-field">
-          <label class="cf-label">Votre besoin *</label>
-          <select class="cf-input cf-select">
-            <option value="">— Sélectionnez —</option>
-            <option>Externalisation de la paie</option>
-            <option>Formation Gestionnaire de Paie (CPF)</option>
-            <option>Logiciel Mysilae — Démo / Achat</option>
-            <option>Alternance / Recrutement</option>
-            <option>Implantation France (international)</option>
-            <option>Autre demande</option>
-          </select>
-        </div>
-        <div class="cf-field"><label class="cf-label">Message</label><textarea class="cf-input cf-textarea" placeholder="Décrivez votre projet ou votre question..."></textarea></div>
-        <button class="cf-submit" onclick="var f=this.closest('.contact-form');var n=f.querySelector('[type=text]').value;var e=f.querySelector('[type=email]').value;var t=f.querySelector('[type=tel]').value;var s=f.querySelector('select').value;var m=f.querySelector('textarea').value;window.location='mailto:contact@metapaye.fr?subject=Demande%20via%20metapaye.fr%3A%20'+encodeURIComponent(s)+'&body='+encodeURIComponent('Nom: '+n+'\nEmail: '+e+'\nTel: '+t+'\nBesoin: '+s+'\n\nMessage:\n'+m)">Envoyer mon message →</button>
-        <p class="cf-legal">En soumettant ce formulaire, vous acceptez d'être contacté par MÉTAPAYE. Données conformes RGPD. Aucun spam.</p>
+    </div>
+    <div class="conn-right">
+      <h3>Se connecter</h3>
+      <p>Accès réservé aux stagiaires MÉTAPAYE inscrits.</p>
+      <div class="conn-form">
+        <input type="email" placeholder="Votre adresse email" />
+        <input type="password" placeholder="Mot de passe" />
+        <button class="btn-login" onclick="window.open('https://app.metapaye.fr','_blank')">Accéder à ma formation →</button>
+        <p class="forgot">Mot de passe oublié ? <a href="mailto:contact@metapaye.fr?subject=Mot de passe oublié">Réinitialiser</a></p>
+      </div>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+        <p style="font-size:12px;color:rgba(255,255,255,0.45);text-align:center;">Pas encore inscrit ? <a href="#formation" style="color:var(--gold);text-decoration:none;font-weight:600;">Voir les formations →</a></p>
       </div>
     </div>
   </div>
@@ -1099,24 +999,15 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:4rem 4% 2rem}
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-top">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo">MÉTA<em>PAYE</em></a>
-        <p>Cabinet expert en gestion de la paie et centre de formation certifié Qualiopi. Partenaire officiel Mysilae. Depuis 2009.</p>
-        <div class="cert-badges">
-          <span class="cert-badge">🏅 Qualiopi</span>
-          <span class="cert-badge">💻 Partenaire Mysilae</span>
-          <span class="cert-badge">✓ CPF Éligible</span>
+        <a href="#" class="logo">MÉTA<span>PAYE</span></a>
+        <p>Cabinet expert en gestion de la paie et centre de formation certifié Qualiopi. Partenaire officiel Mysilae.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">🏅 Qualiopi</span>
+          <span class="footer-badge">💻 Partenaire Mysilae</span>
+          <span class="footer-badge">✓ CPF Éligible</span>
         </div>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#externalisation">Externalisation Paie</a></li>
-          <li><a href="#externalisation">Expert-Comptable</a></li>
-          <li><a href="#mysilae">Logiciel Mysilae</a></li>
-          <li><a href="#externalisation">Implantation France</a></li>
-        </ul>
       </div>
       <div class="footer-col">
         <h4>Formations</h4>
@@ -1129,18 +1020,28 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:4rem 4% 2rem}
         </ul>
       </div>
       <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#externalisation">Externalisation Paie</a></li>
+          <li><a href="#externalisation">Expert-Comptable</a></li>
+          <li><a href="#mysilae">Logiciel Mysilae</a></li>
+          <li><a href="#externalisation">Implantation France</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:+33652916784">📞 06 52 91 67 84</a></li>
           <li><a href="mailto:contact@metapaye.fr">✉️ contact@metapaye.fr</a></li>
-          <li><a href="#contact">📅 Prendre RDV</a></li>
-          <li><a href="#contact">📋 Devis gratuit</a></li>
+          <li><a href="#contact-form">📋 Devis gratuit</a></li>
+          <li><a href="#blog">📰 Blog</a></li>
+          <li><a href="https://www.metapaye.fr/actualites">Actualités</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 MÉTAPAYE — Tous droits réservés</span>
-      <div class="footer-legal">
+      <p>© 2026 MÉTAPAYE — 3 Place Marx Dormoy, 91270 Vigneux-sur-Seine — Tous droits réservés</p>
+      <div class="footer-links">
         <a href="#">Mentions légales</a>
         <a href="#">Politique de confidentialité</a>
         <a href="#">CGV</a>
@@ -1149,50 +1050,35 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:4rem 4% 2rem}
   </div>
 </footer>
 
+<!-- STICKY BTN -->
+<a href="#contact-form" class="sticky-btn">📅 Entretien gratuit</a>
+
 <script>
-// Fade-up on scroll
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  // Tabs filter
+  function filterFormations(cat, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.formation-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat.includes(cat)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
 
-// Hero card tab selection
-document.querySelectorAll('.hct').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.hct').forEach(t=>t.classList.remove('active'));
-    tab.classList.add('active');
+  // Smooth scroll offset for sticky nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      }
+    });
   });
-});
-
-// Audience pill selection
-document.querySelectorAll('.hp').forEach(p=>{
-  p.addEventListener('click',e=>{
-    document.querySelectorAll('.hp').forEach(x=>x.classList.remove('active'));
-    p.classList.add('active');
-  });
-});
-
-// FAQ accordion
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const item=q.parentElement;
-    const isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
-    if(!isOpen)item.classList.add('open');
-  });
-});
-
-// Smooth nav scroll fix
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const href=a.getAttribute('href');
-    if(href==='#')return;
-    const target=document.querySelector(href);
-    if(target){
-      e.preventDefault();
-      const y=target.getBoundingClientRect().top+window.scrollY-74;
-      window.scrollTo({top:y,behavior:'smooth'});
-    }
-  });
-});
 </script>
+
 </body>
 </html>
