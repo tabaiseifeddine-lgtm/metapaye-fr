@@ -464,23 +464,109 @@
     }
     .sticky-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(232,160,32,0.5); }
 
-    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVE TABLETTE ── */
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
+      .hero-inner { grid-template-columns: 1fr; gap: 24px; }
       .hero-card { display: none; }
       .hero h1 { font-size: 32px; }
       .financement-grid { grid-template-columns: 1fr; }
-      .mysilae-inner, .ext-inner, .connexion-inner { grid-template-columns: 1fr; }
+      .mysilae-inner, .ext-inner, .connexion-inner { grid-template-columns: 1fr; gap: 32px; }
       .blog-grid { grid-template-columns: 1fr 1fr; }
       .testi-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
+      .nav-right a:first-child { display: none; } /* cache le téléphone */
     }
+
+    /* ── RESPONSIVE MOBILE ── */
     @media (max-width: 600px) {
-      .blog-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
-      .section-title { font-size: 28px; }
+      /* TOPBAR */
+      .topbar { font-size: 11px; padding: 7px 12px; }
+      .topbar a { display: none; }
+
+      /* NAV */
+      .nav-inner { padding: 0 14px; height: 58px; }
+      .logo { font-size: 18px; }
+      .nav-right { gap: 6px; }
+      .nav-right a:first-child { display: none; }
+      .btn-nav { padding: 7px 12px; font-size: 12px; }
+      .btn-gold { padding: 7px 12px; font-size: 12px; }
+
+      /* HERO */
+      .hero { padding: 40px 16px 36px; }
+      .hero h1 { font-size: 26px; letter-spacing: -0.5px; }
+      .hero p { font-size: 15px; }
+      .hero-badges { gap: 6px; }
+      .badge { font-size: 11px; padding: 4px 10px; }
+      .hero-stats { gap: 16px; flex-wrap: wrap; }
+      .hero-stat .num { font-size: 22px; }
+      .hero-stat .lbl { font-size: 11px; }
+      .hero-ctas { flex-direction: column; gap: 10px; }
+      .btn-hero-main, .btn-hero-sec { width: 100%; text-align: center; padding: 13px 20px; }
+
+      /* STATS BAR */
+      .statsbar { padding: 14px 16px; overflow-x: auto; }
+      .statsbar-inner { display: flex; gap: 20px; justify-content: flex-start; min-width: max-content; }
+      .stat-item .snum { font-size: 20px; }
+      .stat-item .slbl { font-size: 11px; }
+
+      /* SECTIONS */
+      section { padding: 48px 16px; }
+      .section-title { font-size: 24px; }
+      .section-sub { font-size: 14px; margin-bottom: 28px; }
+
+      /* TABS */
+      .section-tabs { gap: 0; margin-bottom: 24px; }
+      .tab-btn { padding: 10px 14px; font-size: 13px; }
+
+      /* FORMATIONS GRID */
+      .formations-grid { grid-template-columns: 1fr; gap: 16px; }
+      .card-header h3 { font-size: 15px; }
+      .card-footer { flex-direction: column; gap: 8px; }
+      .btn-card-main, .btn-card-sec { width: 100%; text-align: center; }
+
+      /* FINANCEMENT */
+      .financement-grid { grid-template-columns: 1fr; gap: 16px; }
+      .fin-card { padding: 24px 18px; }
+      .fin-card h3 { font-size: 18px; }
+
+      /* MYSILAE */
+      #mysilae { padding: 48px 16px; }
+      .mysilae-ctas { flex-direction: column; gap: 10px; }
+      .btn-mysilae-main, .btn-mysilae-sec { width: 100%; text-align: center; padding: 12px 16px; }
+      .dashboard-mock { padding: 14px; }
+      .dash-stats { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+      .dash-stat .n { font-size: 16px; }
+
+      /* EXTERNALISATION */
+      .ext-inner { grid-template-columns: 1fr; gap: 24px; }
+      .ext-card { padding: 22px 18px; }
+
+      /* TEMOIGNAGES */
+      .testi-grid { grid-template-columns: 1fr; gap: 14px; }
+      .testi-card { padding: 18px; }
+
+      /* BLOG */
+      .blog-grid { grid-template-columns: 1fr; gap: 16px; }
+      .blog-img { height: 140px; }
+
+      /* CONNEXION */
+      #connexion { padding: 48px 16px; }
+      .connexion-inner { grid-template-columns: 1fr; gap: 28px; }
+      .conn-left h2 { font-size: 24px; }
+      .conn-right { padding: 22px 18px; }
+      .conn-options { gap: 10px; }
+      .conn-option { padding: 14px 16px; gap: 12px; }
+      .conn-option .conn-ico { font-size: 22px; }
+
+      /* FOOTER */
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      footer { padding: 40px 16px 20px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .footer-links { justify-content: center; }
+
+      /* STICKY BTN */
+      .sticky-btn { bottom: 16px; right: 16px; padding: 11px 16px; font-size: 13px; }
     }
   </style>
 </head>
