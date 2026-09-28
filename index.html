@@ -12,8 +12,8 @@
     :root {
       --navy: #0d1b35;
       --navy-light: #1a2d50;
-      --gold: #e8a020;
-      --gold-hover: #c98a18;
+      --gold: #F26B1D;
+      --gold-hover: #D9570C;
       --white: #ffffff;
       --gray-50: #f8fafc;
       --gray-100: #f1f5f9;
@@ -140,7 +140,7 @@
       display: block;
     }
     .situation-btn:hover, .situation-btn.active {
-      border-color: var(--gold); color: var(--navy); background: #fffbf0;
+      border-color: var(--gold); color: var(--navy); background: #fff4ec;
     }
     .situation-btn .ico { font-size: 22px; display: block; margin-bottom: 6px; }
     .hero-card .divider { text-align: center; color: var(--gray-500); font-size: 12px; margin: 14px 0; }
@@ -176,7 +176,7 @@
     section { padding: 80px 24px; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .section-tag {
-      display: inline-block; background: #fff3e0; color: var(--gold);
+      display: inline-block; background: #fff1e6; color: var(--gold);
       font-size: 12px; font-weight: 700; padding: 5px 14px;
       border-radius: 20px; margin-bottom: 14px; letter-spacing: 0.5px;
       text-transform: uppercase;
@@ -274,7 +274,7 @@
     #mysilae { background: var(--navy); color: var(--white); }
     #mysilae .section-title { color: var(--white); }
     #mysilae .section-sub { color: rgba(255,255,255,0.7); }
-    #mysilae .section-tag { background: rgba(232,160,32,0.2); color: var(--gold); }
+    #mysilae .section-tag { background: rgba(242,107,29,0.18); color: var(--gold); }
     .mysilae-inner {
       display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
     }
@@ -366,7 +366,7 @@
       font-size: 48px;
     }
     .blog-img.blue { background: linear-gradient(135deg, var(--navy), #1a3560); }
-    .blog-img.gold { background: linear-gradient(135deg, #8b5a0a, #c98a18); }
+    .blog-img.gold { background: linear-gradient(135deg, #9a3a05, #F26B1D); }
     .blog-img.teal { background: linear-gradient(135deg, #0d4b4b, #1a7a7a); }
     .blog-body { padding: 20px; }
     .blog-tag { font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
@@ -568,13 +568,61 @@
       /* STICKY BTN */
       .sticky-btn { bottom: 16px; right: 16px; padding: 11px 16px; font-size: 13px; }
     }
+
+    /* ── RETOUCHE MODERNE 2026 ── */
+    nav { background: rgba(255,255,255,0.82); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); }
+    .topbar { background: linear-gradient(90deg, #0d1b35, #1a2d50 50%, #0d1b35); }
+    .hero::after {
+      content: ''; position: absolute; width: 620px; height: 620px; right: -160px; top: -200px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(242,107,29,0.35), transparent 65%); filter: blur(10px);
+      animation: orb 12s ease-in-out infinite alternate; pointer-events: none; z-index: 0;
+    }
+    .hero-inner { z-index: 1; }
+    @keyframes orb { to { transform: translate(-80px, 90px) scale(1.12); } }
+    .hero h1 em { background: linear-gradient(90deg, #F26B1D, #FFB37A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-card { border-radius: 18px; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.6); }
+    .btn-gold, .btn-hero-main, .btn-devis-gold, .btn-mysilae-main, .btn-submit { box-shadow: 0 8px 24px -8px rgba(242,107,29,0.6); }
+    .btn-hero-main, .btn-hero-sec { border-radius: 12px; }
+    .section-tag { border-radius: 999px; letter-spacing: .3px; }
+    .formation-card, .blog-card { border-radius: 16px; }
+    .formation-card:hover, .blog-card:hover { box-shadow: 0 20px 50px -18px rgba(13,27,53,0.35), 0 0 0 1px rgba(242,107,29,0.35); transform: translateY(-5px); }
+    .card-header { background: linear-gradient(135deg, #0d1b35, #1a3560); }
+    .meta-tag.price { background: #F26B1D; color: #fff; font-weight: 700; }
+
+    /* 3 blocs */
+    #expertises { background: linear-gradient(180deg, #f8fafc, #fff); }
+    .blocs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .bloc {
+      position: relative; display: flex; flex-direction: column; text-decoration: none; color: var(--navy);
+      background: #fff; border: 1px solid var(--gray-200); border-radius: 20px; padding: 32px 28px 28px;
+      transition: transform .3s, box-shadow .3s, border-color .3s; overflow: hidden;
+    }
+    .bloc::before {
+      content: ''; position: absolute; inset: 0 0 auto 0; height: 4px;
+      background: linear-gradient(90deg, #F26B1D, #FFB37A); transform: scaleX(0); transform-origin: left; transition: transform .4s;
+    }
+    .bloc:hover { transform: translateY(-6px); box-shadow: 0 24px 60px -20px rgba(13,27,53,0.3); border-color: rgba(242,107,29,0.4); }
+    .bloc:hover::before { transform: scaleX(1); }
+    .bloc-num { position: absolute; top: 22px; right: 26px; font-size: 13px; font-weight: 700; color: var(--gray-500); letter-spacing: 1px; }
+    .bloc-ico { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-size: 26px; background: #fff1e6; margin-bottom: 22px; }
+    .bloc h3 { font-size: 21px; font-weight: 800; letter-spacing: -.4px; margin-bottom: 10px; }
+    .bloc p { font-size: 14.5px; color: var(--gray-500); line-height: 1.6; flex: 1; }
+    .bloc-price { font-size: 30px; font-weight: 900; color: #F26B1D; margin-top: 18px; letter-spacing: -.5px; }
+    .bloc-price small { font-size: 13px; font-weight: 600; color: var(--gray-500); letter-spacing: 0; }
+    .bloc-link { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--gray-100); font-weight: 700; font-size: 14px; color: #F26B1D; }
+    .bloc-accent { background: linear-gradient(160deg, #0d1b35, #1a3560); color: #fff; border-color: transparent; }
+    .bloc-accent p, .bloc-accent .bloc-price small, .bloc-accent .bloc-num { color: rgba(255,255,255,0.7); }
+    .bloc-accent .bloc-ico { background: rgba(242,107,29,0.18); }
+    .bloc-accent .bloc-link { border-color: rgba(255,255,255,0.12); }
+    @media (max-width: 900px) { .blocs-grid { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { .hero::after { animation: none; } }
   </style>
 </head>
 <body>
 
 <!-- TOP BAR -->
 <div class="topbar">
-  🎓 <strong>Session Titre Pro Gestionnaire de Paie — Septembre 2026</strong> · Financement CPF 100% disponible
+  🎓 <strong>Formation Gestionnaire de Paie — 8 900 €</strong> · Inscriptions ouvertes · Paiement en ligne sécurisé
   <a href="#formation">S'inscrire →</a>
 </div>
 
@@ -583,10 +631,9 @@
   <div class="nav-inner">
     <a href="#" class="logo">MÉTA<span>PAYE</span></a>
     <ul class="nav-links">
-      <li><a href="#formation">Formations</a></li>
-      <li><a href="#financement">Financement</a></li>
-      <li><a href="#mysilae">Mysilae</a></li>
       <li><a href="#externalisation">Externalisation</a></li>
+      <li><a href="#mysilae">Licence Mysilae</a></li>
+      <li><a href="#formation">Formation</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#connexion">Espace formation</a></li>
     </ul>
@@ -604,11 +651,10 @@
     <div class="hero-left">
       <div class="hero-badges">
         <span class="badge gold">🏅 Qualiopi certifié</span>
-        <span class="badge">✓ CPF Éligible</span>
         <span class="badge">💻 Partenaire Mysilae N°1</span>
       </div>
       <h1>L'expert paie<br><em>qui fait la différence</em></h1>
-      <p>Centre de formation certifié et cabinet d'externalisation spécialisé paie. Titre Professionnel Gestionnaire de Paie, revendeur officiel Mysilae, externalisation TPE/PME.</p>
+      <p>Cabinet spécialisé paie : externalisation pour TPE/PME et experts-comptables, licence Mysilae mise à disposition, formation Gestionnaire de Paie.</p>
       <div class="hero-stats">
         <div class="hero-stat"><div class="num">+200</div><div class="lbl">Entreprises</div></div>
         <div class="hero-stat"><div class="num">97%</div><div class="lbl">Satisfaction</div></div>
@@ -616,7 +662,7 @@
         <div class="hero-stat"><div class="num">15 ans</div><div class="lbl">d'expertise</div></div>
       </div>
       <div class="hero-ctas">
-        <a href="#formation" class="btn-hero-main">🎓 Voir les formations</a>
+        <a href="#formation" class="btn-hero-main">🎓 Voir la formation</a>
         <a href="#externalisation" class="btn-hero-sec">📋 Devis externalisation</a>
       </div>
     </div>
@@ -647,16 +693,50 @@
     <div class="stat-item"><div class="snum">97%</div><div class="slbl">🎓 Satisfaction stagiaires</div></div>
     <div class="stat-item"><div class="snum">Qualiopi</div><div class="slbl">🏅 Certifié État · 79% réussite</div></div>
     <div class="stat-item"><div class="snum">4,9/5</div><div class="slbl">⭐ Note clients · 186 avis</div></div>
-    <div class="stat-item"><div class="snum">100%</div><div class="slbl">💶 Financement CPF disponible</div></div>
+    <div class="stat-item"><div class="snum">15 ans</div><div class="slbl">📅 d'expertise paie</div></div>
   </div>
 </div>
+
+
+<!-- NOS 3 EXPERTISES -->
+<section id="expertises">
+  <div class="section-inner">
+    <div class="section-tag">✦ Nos expertises</div>
+    <h2 class="section-title">Trois métiers, <em>un seul interlocuteur</em></h2>
+    <p class="section-sub">Déléguez votre paie, équipez-vous du bon logiciel ou devenez gestionnaire de paie : META PAYE vous accompagne de bout en bout.</p>
+    <div class="blocs-grid">
+      <a href="#externalisation" class="bloc">
+        <span class="bloc-num">01</span>
+        <div class="bloc-ico">📄</div>
+        <h3>Externalisation de la paie</h3>
+        <p>Bulletins, DSN et déclarations sociales pris en charge par nos experts — pour les TPE/PME et en sous-traitance pour les cabinets d'expertise comptable.</p>
+        <span class="bloc-link">Demander un devis →</span>
+      </a>
+      <a href="#mysilae" class="bloc">
+        <span class="bloc-num">02</span>
+        <div class="bloc-ico">💻</div>
+        <h3>Licence Mysilae & mise à disposition</h3>
+        <p>Revendeur et intégrateur officiel : licence, paramétrage de vos dossiers, formation de vos équipes et support au quotidien.</p>
+        <span class="bloc-link">Demander une démo →</span>
+      </a>
+      <a href="#formation" class="bloc bloc-accent">
+        <span class="bloc-num">03</span>
+        <div class="bloc-ico">🎓</div>
+        <h3>Formation Gestionnaire de Paie</h3>
+        <p>910 h · 6 mois, en présentiel ou 100 % à distance, avec pratique intensive sur Mysilae.</p>
+        <div class="bloc-price">8 900 € <small>· paiement en ligne</small></div>
+        <span class="bloc-link">Voir la formation →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- FORMATION SECTION -->
 <section id="formation">
   <div class="section-inner">
     <div class="section-tag">🎓 Centre certifié Qualiopi</div>
     <h2 class="section-title">Nos formations <em>professionnelles</em></h2>
-    <p class="section-sub">Titres Professionnels niveaux 4 & 5 + modules courts. Finançables CPF, OPCO et France Travail.</p>
+    <p class="section-sub">Titres Professionnels niveaux 4 & 5 et modules courts, animés par des praticiens de la paie.</p>
 
     <div class="section-tabs">
       <button class="tab-btn active" onclick="filterFormations('all', this)">Toutes les formations</button>
@@ -676,8 +756,7 @@
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="meta-tag cpf">✓ CPF Éligible</span>
-            <span class="meta-tag green">✓ OPCO</span>
+            <span class="meta-tag price">8 900 €</span>
             <span class="meta-tag">910h · 6 mois</span>
             <span class="meta-tag">Certifiant</span>
           </div>
@@ -686,7 +765,7 @@
             <li>79% de réussite aux examens</li>
             <li>73% d'accès à l'emploi en 6 mois</li>
             <li>Formateurs experts terrain</li>
-            <li>Finançable à 100% CPF · OPCO · France Travail</li>
+            <li>Paiement en ligne sécurisé · CB ou en plusieurs fois</li>
           </ul>
         </div>
         <div class="card-footer">
@@ -704,8 +783,7 @@
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="meta-tag cpf">✓ CPF Éligible</span>
-            <span class="meta-tag green">✓ OPCO</span>
+            <span class="meta-tag price">8 900 €</span>
             <span class="meta-tag">910h · 6 mois</span>
             <span class="meta-tag">🏠 En ligne</span>
           </div>
@@ -714,7 +792,7 @@
             <li>Accès plateforme 24h/24</li>
             <li>Accompagnement personnalisé</li>
             <li>Sessions live avec formateurs</li>
-            <li>Finançable à 100% CPF</li>
+            <li>Paiement en ligne sécurisé · CB ou en plusieurs fois</li>
           </ul>
         </div>
         <div class="card-footer">
@@ -732,8 +810,6 @@
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="meta-tag cpf">✓ CPF Éligible</span>
-            <span class="meta-tag green">✓ OPCO</span>
             <span class="meta-tag">840h · 6 mois</span>
             <span class="meta-tag">Certifiant</span>
           </div>
@@ -742,7 +818,7 @@
             <li>Recrutement & administration RH</li>
             <li>Paie et obligations sociales</li>
             <li>SIRH et outils digitaux RH</li>
-            <li>Finançable à 100% CPF</li>
+            <li>Formateurs experts terrain</li>
           </ul>
         </div>
         <div class="card-footer">
@@ -760,7 +836,6 @@
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="meta-tag cpf">✓ CPF Éligible</span>
             <span class="meta-tag">630h · 5 mois</span>
             <span class="meta-tag">Certifiant</span>
           </div>
@@ -769,7 +844,7 @@
             <li>Bureautique & communication pro</li>
             <li>Gestion administrative complète</li>
             <li>Passerelle vers Bac+2 possible</li>
-            <li>Finançable CPF · OPCO</li>
+            <li>Formateurs experts terrain</li>
           </ul>
         </div>
         <div class="card-footer">
@@ -787,7 +862,6 @@
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="meta-tag green">✓ Finançable OPCO</span>
             <span class="meta-tag">2 jours</span>
             <span class="meta-tag distanciel">Distanciel</span>
           </div>
@@ -796,7 +870,7 @@
             <li>Prise en main complète</li>
             <li>DSN automatique</li>
             <li>Formateur partenaire officiel</li>
-            <li>OPCO · Plan compétences</li>
+            <li>Support de cours inclus</li>
           </ul>
         </div>
         <div class="card-footer">
@@ -814,7 +888,6 @@
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="meta-tag green">✓ Plan compétences</span>
             <span class="meta-tag">1 jour</span>
           </div>
           <p>Évolutions DSN 2026, corrections anomalies, DSN prévoyance. Exercices sur cas réels.</p>
@@ -822,7 +895,7 @@
             <li>Évolutions réglementaires 2026</li>
             <li>Correction d'anomalies</li>
             <li>Exercices sur cas réels</li>
-            <li>Plan de développement compétences</li>
+            <li>Attestation de formation</li>
           </ul>
         </div>
         <div class="card-footer">
@@ -835,35 +908,6 @@
 
     <div class="formation-cta">
       <a href="mailto:contact@metapaye.fr?subject=Catalogue formations complet" class="btn-devis-gold">📋 Télécharger le catalogue complet →</a>
-    </div>
-  </div>
-</section>
-
-<!-- FINANCEMENT -->
-<section id="financement">
-  <div class="section-inner">
-    <div class="section-tag">💶 Financement</div>
-    <h2 class="section-title">Comment financer <em>votre formation ?</em></h2>
-    <p class="section-sub">Nos experts en financement vous accompagnent pour trouver la meilleure solution selon votre situation — jusqu'à 100% pris en charge.</p>
-    <div class="financement-grid">
-      <div class="fin-card cpf">
-        <div class="fin-logo">🏦</div>
-        <h3>CPF<br>Éligible</h3>
-        <p>Utilisez votre Compte Personnel de Formation. En fonction de votre crédit disponible — <strong>à partir de 0€</strong>.</p>
-        <a href="https://www.moncompteformation.gouv.fr" target="_blank" class="fin-cta">Mon Compte Formation →</a>
-      </div>
-      <div class="fin-card ft">
-        <div class="fin-logo">🇫🇷</div>
-        <h3>France Travail<br><span style="font-size:18px">À partir de 0€</span></h3>
-        <p>Formation éligible aux aides de France Travail (ex Pôle Emploi). Financement intégral pour les demandeurs d'emploi.</p>
-        <a href="mailto:contact@metapaye.fr?subject=Financement France Travail" class="fin-cta">Vérifier mon éligibilité →</a>
-      </div>
-      <div class="fin-card opco">
-        <div class="fin-logo">🏢</div>
-        <h3>OPCO<br>100% PME</h3>
-        <p>Formations réalisables en alternance ou via votre OPCO. Pour les PME : <strong>100% pris en charge par l'employeur</strong>.</p>
-        <a href="mailto:contact@metapaye.fr?subject=Financement OPCO" class="fin-cta">Monter mon dossier →</a>
-      </div>
     </div>
   </div>
 </section>
@@ -1024,7 +1068,7 @@
         <div class="blog-body">
           <div class="blog-tag">Formation</div>
           <h3>Formation Gestionnaire de Paie 2026 : tout ce que vous devez savoir</h3>
-          <p>Titre Professionnel, CPF, durée, débouchés — le guide complet de la formation gestionnaire de paie.</p>
+          <p>Titre Professionnel, durée, programme, débouchés — le guide complet de la formation gestionnaire de paie.</p>
           <div class="blog-meta">7 juin 2026</div>
         </div>
       </div>
@@ -1092,7 +1136,6 @@
         <div class="footer-badges">
           <span class="footer-badge">🏅 Qualiopi</span>
           <span class="footer-badge">💻 Partenaire Mysilae</span>
-          <span class="footer-badge">✓ CPF Éligible</span>
         </div>
       </div>
       <div class="footer-col">
